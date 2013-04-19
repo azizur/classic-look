@@ -71,51 +71,21 @@
 	    <a href="/about/">About</a> | <a href="/site-map/">Site Map</a> | <a href="/privacy-policy/">Privacy Policy</a> |  <a href="/terms-of-service/">Terms of Service</a> |  <a href="/refund-policy/">Refund Policy</a> | <a href="/contact-http://productivemuslim.com/wp-admin/plugins.php?page=cloudflareus">Contact</a> | &copy; 2008-2013 ProductiveMuslim.com
 	</div>
     </div><!-- #footerEnd -->
-</div><!-- #prefooterx -->	<div id="footer">
-		<p>Get smart with the <a href="http://diythemes.com/thesis/">Thesis WordPress Theme</a> from DIYthemes.</p>
-		<p><a href="http://productivemuslim.com/wp-admin/">WordPress Admin</a></p>
-<script type="text/javascript">
-jQuery(document).ready(function(){
-  var q2w3_sidebar_options = { "sidebar" : "q2w3_default", "margin_top" : 10, "margin_bottom" : 0, "widgets" : ['text-9'] }
-  setInterval(function () { q2w3_sidebar(q2w3_sidebar_options); }, 1000);
-});
-</script>
-	<div style="display:none">
-	</div>
-<link rel='stylesheet' id='digg-digg-css'  href='http://productivemuslim.com/wp-content/plugins/digg-digg/css/diggdigg-style.css?ver=5.3.3' type='text/css' media='screen' />
-<script type='text/javascript' src='http://s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=201316'></script>
-<script type='text/javascript' src='http://s.gravatar.com/js/gprofiles.js?ver=2013Apraa'></script>
-<script type='text/javascript'>
-/* <![CDATA[ */
-var WPGroHo = {"my_hash":""};
-/* ]]> */
-</script>
-<script type='text/javascript' src='http://productivemuslim.com/wp-content/plugins/jetpack/modules/wpgroho.js?ver=3.5.1'></script>
-    <!-- BEGIN Aweber Script -->
-	<script type="text/javascript" src="http://analytics.aweber.com/js/awt_analytics.js?id=8CEz"></script>
-    <!-- END Aweber Script -->    <!-- BEGIN Tynt Script -->
+</div><!-- #prefooterx -->
+
+<div id="footer">
     <script type="text/javascript">
-    if(document.location.protocol=='http:'){
-     var Tynt=Tynt||[];Tynt.push('aAKb0q96ir4AVFacwqm_6r');Tynt.i={"ap":"Read more:"};
-     (function(){var s=document.createElement('script');s.async="async";s.type="text/javascript";s.src='http://tcr.tynt.com/ti.js';var h=document.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);})();
-     /** Tynt SpeedShare */
-     (function(){var s=document.createElement('script');s.async="async";s.type="text/javascript";s.src='http://tcr.tynt.com/tss.js';var h=document.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);})();
-    }
+    jQuery(document).ready(function(){
+    var q2w3_sidebar_options = { "sidebar" : "q2w3_default", "margin_top" : 10, "margin_bottom" : 0, "widgets" : ['text-9'] }
+    setInterval(function () { q2w3_sidebar(q2w3_sidebar_options); }, 1000);
+    });
     </script>
-    <!-- END Tynt Script -->
-	<script src="http://stats.wordpress.com/e-201316.js" type="text/javascript"></script>
-	<script type="text/javascript">
-	st_go({v:'ext',j:'1:2.2.2',blog:'38978169',post:'0',tz:'0'});
-	var load_cmc = function(){linktracker_init(38978169,0,2);};
-	if ( typeof addLoadEvent != 'undefined' ) addLoadEvent(load_cmc);
-	else load_cmc();
-	</script>	</div>
-<script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script>
+</div>
 </div>
 </div>
 <!--[if lte IE 8]>
 <div id="ie_clear"></div>
 <![endif]-->
-<script type="text/javascript">if(!NREUMQ.f){NREUMQ.f=function(){NREUMQ.push(["load",new Date().getTime()]);var e=document.createElement("script");e.type="text/javascript";e.src=(("http:"===document.location.protocol)?"http:":"https:")+"//"+"d1ros97qkrwjf5.cloudfront.net/42/eum/rum.js";document.body.appendChild(e);if(NREUMQ.a)NREUMQ.a();};NREUMQ.a=window.onload;window.onload=NREUMQ.f;};NREUMQ.push(["nrfj","beacon-3.newrelic.com","150aa0dc3e","2169313","NgRUbBcFXEVTVRFdXw9Od1sRDV1YHV8LUFUZ",0,2445,new Date().getTime(),"","","","",""]);</script>
+<?php wp_footer(); ?>
 </body>
 </html>
