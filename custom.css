@@ -1,0 +1,1292 @@
+/*
+File:			custom.css
+Description:	Custom styles for Thesis
+
+BASIC USAGE:
+
+If you have enabled the custom stylesheet in the Thesis options panel, the <body> tag 
+will be appended with the "custom" class, like so: <body class="custom">. You can use 
+the "custom" class to override *any* CSS declarations contained in the style.css file.
+-moz-border-radius: 4px 4px 4px 4px;
+For example, if you wish to change the default link color to green, you would add the 
+following declarations to this file:
+
+	.custom a, .custom a:visited { color: #090; }	<--- This makes links green
+	.custom a:hover { color: #00f; }	<--- This makes links blue when you mouse over them
+
+WHY THIS WORKS:
+
+By using the "custom" class, you are creating more specific CSS declarations for HTML
+elements. CSS styling is applied through rules of specificity, and because declarations
+prepended with .custom are more specific, they get applied when the page is rendered!
+
+More information about styling your Thesis installation using this file can be found
+in the User's Guide:
+	http://diythemes.com/thesis/rtfm/customizing-thesis-with-customcss/
+*/
+
+
+
+
+
+/*-----------------------------------------------------------------------------
+
+	COLORS
+	dimmed titles	e1d1c4
+	main menu		ffffff
+	header bg		3B2313
+	text
+	links, callouts	C66717
+	dimmed bg		f3efec
+
+
+
+
+
+-----------------------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+/*-----------------------------------------------------------------------------*/
+/*-------------------------- css reset ----------------------------------------*/
+/*-----------------------------------------------------------------------------*/
+	html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ul, li, ol, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { margin: 0; padding: 0; border: 0; outline: 0; font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; }
+						/* remember to define focus styles! */
+	:focus				{ outline: 0;}
+	body				{ line-height: 1; color: black; background: white; }
+	ol, ul				{ list-style: none; }
+						/* tables still need 'cellspacing="0"' in the markup */
+	table				{ border-collapse: separate; border-spacing: 0; }
+	caption,
+	th, td				{ text-align: left; font-weight: normal; }
+	blockquote:before,
+	blockquote:after,
+	q:before, q:after	{ content: ""; }
+	blockquote, q 		{ quotes: "" ""; }
+	/* css reset */
+	
+
+
+
+
+
+
+/*-----------------------------------------------------------------------------*/
+/*------------------------- font sizes ----------------------------------------*/
+/*-----------------------------------------------------------------------------*/
+
+	/* reset */
+	.headline_area h1, .headline_area h2,
+	.teaser h2, .to_comments, .to_comments a span,
+	.format_text .to_comments span, .teaser .teaser_link { font-size:inherit;line-height:inherit; }
+
+	
+	/* 12px */
+	.custom .textwidget li,
+	.custom .subscribe,
+	.custom ul.twitter li,
+	.custom #preFoot p,
+	.custom .footerMenu li a,
+	.custom .featuredContent,
+	.custom .to_comments a span,
+	.custom .topArticles li a,
+	.custom .tubepress_thumb, 
+	.custom .widget_recent_comments li a {
+		font-size:120%;
+		line-height:140%;
+	}
+	
+	/* 12px --> 18px */
+	.custom .featuredContent a {
+		font-size:150%;
+	}
+	
+	/* 13px */
+	.custom h3 {
+		font-size:130%;
+	}
+
+	/* 14px */
+	.custom .format_text,
+	.custom .menu a,
+	.custom .searchField input,
+	.custom .searchField label,
+	.custom #feature_box ul.featurePostSet p,
+	.custom .featured-title,
+	.custom .teaser .format_teaser,
+	.custom .teaser .teaser_date,
+	.custom a.teaser_link,
+	.custom .prev_next a,
+	.custom .metaInfo {
+		font-size:140%;
+	}
+	
+	/* 16px */
+	{
+		font-size:160%;
+	}
+
+	/* 16px --> 14px */
+	.custom .to_comments {
+		font-size:87.5%;
+	}
+
+	/* 18px */
+	.custom #feature_box h3,
+	.custom #sidebars h3,
+	.custom #preFoot h3,
+	.custom #feature_box b.featurePostHeader {
+		font-size:180%;
+	}
+	
+	/* 20px */
+	.custom .teasers_box h2.entry-title a {
+		font-size:200%;
+	}
+	
+	/* 26px */
+	.custom h2.entry-title a,
+	.custom h1 {
+		font-size:260%;
+		*font-size:26px;
+		line-height:normal;
+	}
+
+
+
+
+
+
+/*-----------------------------------------------------------------------------*/
+/*------------------------- element resets ------------------------------------*/
+/*-----------------------------------------------------------------------------*/	
+	.custom .page {
+		width:980px;
+	}
+	
+	.custom #content {
+		width:640px;
+		margin:0;
+	}
+	
+	.custom #content_box { background:none; }
+	
+	.custom #sidebars { width:auto; }
+	
+	.custom .sidebar h3 { font-variant:normal; }
+	
+/* ---- sidebar 1 ---- */
+	.custom #sidebar_1 {
+		margin: 0;
+		width:300px;
+		border:0;
+	}
+	
+	.custom li.widget { margin-bottom:20px;font-size:100%; }
+
+	.custom li.widget p { margin-bottom:0; }
+	
+	.custom ul.topArticles,
+	.custom .widget_recent_comments li a { padding:0 0 5px; }
+	
+	.custom ul.topArticles li,
+	.custom ul.twitter li,
+	.custom .widget_recent_comments li { padding:5px 10px;margin:0; border-bottom:1px solid #cccccc;word-wrap: break-word; }
+	.custom .widget_recent_comments li:last-child { border-bottom:none; }
+	.custom #tubepress .tubepress_meta_description {
+		display: none; 
+	}
+	.custom #tubepress .tubepress_container {
+		margin-bottom: 1.5em; 
+	}
+	.custom #text-7 { text-align: center; }
+	.custom #text-7 a { font-size: 180%; }
+	
+	.topArticles li a { width:120px !important;}
+/* ---- padding reset ---- */
+	.custom .full_width .page,
+	.custom #header,
+	.custom #footer,
+	.custom #feature_box,
+	.custom #sidebar_1 ul.sidebar_list,
+	.custom #sidebar_2 ul.sidebar_list,
+	.custom .sidebar ul.sidebar_list,
+	.sidebar ul.sidebar_list,
+	.custom .sidebar_list,
+	.custom .post_box .entry-content,
+	.custom .tubepress_thumbnail_area,
+	.custom .tubepress_thumbs {
+		padding:0 !important;
+	}
+
+/* ---- margin reset ---- */
+	.custom #header,
+	.custom #footer,
+	.custom #sidebar_1 ul.sidebar_list,
+	.custom #sidebar_2 ul.sidebar_list,
+	.custom .sidebar h3,
+	.custom .teasers_box,
+	.custom .full_width #content_box .page,
+	.custom .headline_area,
+	.custom h1#tagline,
+	.custom a#tagline,
+	.custom .post_box .entry-content {
+		margin:0 !important;
+	}
+	
+	.custom p { margin:0 0 10px; }
+
+	.custom li.last { margin-right:0 !important;padding-right:0 !important;border-bottom:0 !important; }
+	
+
+
+/* ---- sidebar 2 ---- */	
+	.custom #sidebar_2 {
+		width:180px;
+	}
+
+
+
+
+
+
+/*-----------------------------------------------------------------------------*/
+/*------------------------- shared elements -----------------------------------*/
+/*-----------------------------------------------------------------------------*/
+	.custom {
+		font:normal 10px "Trebuchet MS", Tahoma, arial, helvetica, sans-serif;
+	}
+	
+
+/* ---- title headers ---- */
+	.custom #feature_box b.featurePostHeader, .custom h3 {
+		padding:3px 10px;
+		text-transform:uppercase;
+		letter-spacing:-0.01em;
+		color:#e1d1c4;
+		line-height:normal;
+	}
+	
+	.custom a { text-decoration:none;}
+	
+	.custom #twitter-1 h3 { background-image: url("/images/sidebar-twitter-icon.png"); background-repeat: no-repeat; background-position: 2px 2px; padding-left: 28px; }
+	.custom a.twitter_title_link { color:#e1d1c4; }
+	
+	
+	
+/* ---- title backgrounds ---- */
+	.custom #feature_box b.featurePostHeader, .custom h3, .custom .menu,
+.custom .menu-top-menu-container,
+	.custom .menu li a {
+		background: #3b2313;	
+	}
+	.custom .menu li a:active {
+		color:#ccc;
+	}
+	
+/* ---- dimmed section backgrounds ---- */
+	.custom ul.topArticles,
+	.custom ul.twitter,
+	.custom .widget_recent_comments {
+		/* ---- background:#f3efec; ---- */
+	}
+
+
+/* ---- rounded corners ---- */
+	/* left round */
+	.custom .menu li#menu-item-1557 a,
+	.custom .menu li#menu-item-1573 a,
+	.custom #preFoot .about h3 {
+		-webkit-border-radius:4px 0 0 4px;
+		-moz-border-radius:4px 0 0 4px;
+		border-radius:4px 0 0 4px;
+	}
+	
+	/* right round */
+	.custom #preFoot .projects h3 {
+		-webkit-border-radius:0 4px 4px 0;
+		-moz-border-radius:0 4px 4px 0;
+		border-radius:0 4px 4px 0;
+	}
+	
+	/* all round */
+	.custom #feature_box b.featurePostHeader, .custom h3, .custom .menu, .custom .menu-top-menu-container {
+		-webkit-border-radius:4px;
+		-moz-border-radius:4px;
+		border-radius:4px;
+	}
+	
+	/* square */
+	.custom #preFoot .resources h3,
+	.custom #feature_box b.featurePostHeader {
+		-webkit-border-radius:0px;
+		-moz-border-radius:0px;
+		border-radius:0px;
+	}
+
+
+/* ---- icon sprite ---- */
+	.custom h1#tagline,
+	.custom a#tagline,
+	.custom #socialWrap,
+	.custom #socialWrap a,
+	.custom .searchBtn,
+	.custom .subscribe a.rss,
+	.custom #countdown-logo,
+	.custom .to_comments {
+		background:url(http://www.productivemuslim.com/images/proMSprite.png) no-repeat;
+	}
+
+
+
+/* ---- hiding elements ---- */
+	.custom p#logo,
+	.custom span.bracket,
+	.custom #feature_box h3,
+	.custom .carouselContainer,
+	.custom .headline_area p.headline_meta { display:none;visibility:hidden; }
+
+
+
+	.custom strong { font-weight:bold; }
+	.custom em { font-style:italic; }
+	.custom abbr, .custom acronym { letter-spacing:0; }
+
+
+
+
+
+
+/*-----------------------------------------------------------------------------*/
+/*-------------------------- header area --------------------------------------*/
+/*-----------------------------------------------------------------------------*/
+	.custom #header_area .page {
+		padding-top:5px;
+		margin-bottom:20px;
+		margin-top:20px;
+		position:relative;
+	}
+
+	.custom #header { border:0; padding:5px 0; }
+
+/* ---- search field ---- */
+
+	.custom form.search_form_image_button { 
+		font:normal 10px "Trebuchet MS", Tahoma, arial, helvetica, sans-serif;
+		position:absolute;
+		top:0px;
+		right:0px;
+		width:190px;
+		z-index:10000;
+		height: 24px;
+		padding-top: 5px;
+		padding-right: 14px;
+		margin-top: -5px;
+		margin-bottom: -3px;
+	}
+.custom form.search_form_image_button input { 
+	color: #E1D1C4;
+	font-size: 12px;
+	height: 17px;
+	width:160px;
+	padding: 2px 20px 2px 2px;
+	border-radius: 4px;
+	background-color:#88502B;
+	background-image:url("http://www.productivemuslim.com/wp-content/uploads/searchbutton.png");
+	background-repeat:no-repeat;
+	background-position: 99% 1px;
+	border:none;
+	font-family: "Trebuchet MS", Tahoma, arial, helvetica, sans-serif;
+	float:right;
+	margin:0px 4px 0px 0px;
+	}
+	.custom form.search_form_image_button{
+		height:22px;
+		width:190px;
+		border:0;
+		padding:5px 0px;
+	}
+	
+	.custom form.search_form_image_button #s{
+		margin-top:3px;
+		height:16px;
+		width:160px;
+		color: #E1D1C4;
+	}
+
+	.custom input#searchsubmit.my-search-image {
+		background:url("http://www.productivemuslim.com/wordpress/wp-content/uploads/searchbutton.png") no-repeat 50% 50%;
+		cursor:pointer;
+   		border:none;
+		height:17px;
+		width:24px;
+        
+	}
+	
+	.custom h1#tagline,
+	.custom a#tagline,
+	.custom #countdown-logo {
+		background-position:top left;
+		height:85px;
+		width:219px;
+	}
+
+	.custom #socialWrap {
+		width:515px;
+		background-position:left -87px;
+		position:absolute;
+		bottom:30px;
+		right:0;
+	}
+	
+	.custom #socialWrap ul 			{ list-style-type:none;float:right; }
+	.custom #socialWrap ul li 		{ float:left; }
+	.custom #socialWrap a 			{ margin:0 5px 0 0; width:34px;height:37px; }
+	.custom #socialWrap a.rss 		{ background-position:left -200px; }
+	.custom #socialWrap a.twitter 	{ background-position:left -250px; }
+	.custom #socialWrap a.facebook 	{ background-position:left -300px; }
+	.custom #socialWrap a.youtube	{ background-position:left -350px; }
+	.custom #socialWrap a.email 	{ background-position:left -400px; }
+
+
+
+	.custom a#tagline a { border:1px solid red; }
+
+
+
+
+
+
+/*-----------------------------------------------------------------------------*/
+/*-------------------------- menu ---------------------------------------------*/
+/*-----------------------------------------------------------------------------*/
+	.custom .menu { clear:both; }
+	
+	.custom .menu a {
+		padding:5px 10px;
+		letter-spacing:0;
+	}
+	
+	.menu li.current-category-parent a,
+	.custom li.current-menu-item a,
+	.custom .menu a:hover,
+	.custom .menu a:active { background:#C66717 !important; color:#3B2313 !important; }
+
+
+/* ---- top menu ---- */
+	.custom .menu-top-menu-container { margin:0 0 20px; }
+	.custom #menu-top-menu { float:left; }
+	.custom #menu-top-menu a { color:#e1d1c4; }
+	
+	
+/* ---- main menu ---- */
+	.custom #header .menu { margin:20px 0 0; }
+
+
+
+
+
+
+
+/*-----------------------------------------------------------------------------*/
+/*-------------------------- content area -------------------------------------*/
+/*-----------------------------------------------------------------------------*/
+	.custom #content_area h2,
+	.custom h1.entry-title {
+		color:#C66717;
+		margin:0 0 5px;
+	}
+	.custom .page h1 {
+	    margin-bottom: 1em;
+	}
+	
+	.custom .headline_area p.author { position:relative; }
+	.custom span.to_comments { background-position:left -598px;bottom:0; }
+	.custom .metaInfo { margin:0 0 20px; }
+	.custom .metaInfo p { margin:0; }
+	.custom .metaInfo .topSocial { margin:10px 0 0; }
+	.custom .metaInfo .topSocial span { vertical-align:middle; width:60px; }
+	
+	.custom .format_text ol { list-style: decimal; }
+	.custom .format_text ul { list-style: disc; }
+
+/* ---- featured posts ---- */	
+	.custom #feature_box { background:none;border:0; }
+	
+	.custom #feature_box h3.latestHdr { display:block; visibility:visible; }
+	
+	.custom #feature_box ul { list-style-type:none; }
+	
+	.custom #feature_box ul.sidebar_list,
+	.custom #feature_box ul.featurePostSet { margin:20px 0; }
+	
+	.custom #feature_box p.featured-title { line-height:140%;clear:both;padding:10px 0 0; }
+
+	.custom #feature_box p.featured-title a { color:#191919; text-decoration:none; font-weight:bold; }
+	
+	.custom #feature_box p.featured-title a:hover,
+	.custom #feature_box p.featured-title a:active { color:#C66717; }
+	
+	.custom li.widget_featured-posts { background:0; margin-bottom:0 !important; }
+	
+	.custom #feature_box b.featurePostHeader { font-weight:normal; display:block; }
+	
+	.custom #feature_box ul.sidebar_list { margin:0; }
+	
+	.custom #feature_box ul.sidebar_list li ul li {
+		float:left;
+		width:181px;
+		margin:0 6px;
+		list-style-type:none;
+		min-height:150px;
+		height:auto !important;
+		height:150px;
+		position:relative;
+		background-color: black;
+	}
+	
+	.custom #feature_box ul.sidebar_list li ul li img {
+		border:0;
+		vertical-align: middle;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		float: none; 
+	}
+	
+	.custom #feature_box ul.sidebar_list li ul li .featured-title { 
+		background-color: white;
+	}
+	
+	.custom.newsletter #mc_embed_signup fieldset {
+	  font-size: 150%; 
+	}
+	
+	.custom .lightbox-top-text p { font-size: 150%; }
+	
+/* ---- latest articles ---- */	
+	.custom .post_box, .custom .teasers_box { border-bottom:1px dotted #C66717; border-top:0; clear:both; }
+	
+	.custom .teaser_date { text-transform:none; }
+	
+.custom .post_box { 
+	border: 1px solid #DDDDDD;
+	padding:10px;
+	border-radius:4px;
+	overflow:hidden;
+	background: #ffffff; /* Old browsers */
+	background: #feffff; /* Old browsers */
+	background: -moz-linear-gradient(top,  #feffff 40%, #f3efec 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(40%,#feffff), color-stop(100%,#f3efec)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #feffff 40%,#f3efec 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #feffff 40%,#f3efec 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #feffff 40%,#f3efec 100%); /* IE10+ */
+	background: linear-gradient(top,  #feffff 40%,#f3efec 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feffff', endColorstr='#f3efec',GradientType=0 ); /* IE6-9 */
+	position:relative;
+	margin:0 0 20px 0px;
+}
+.post_box, .teasers_box, .full_width #content_box .page {
+    margin: 0;
+}
+	.custom .post_box .entry-content {  }
+	
+	.custom .post h2 a, .custom .to_comments { color:#C66717; }
+	
+	.custom .headline_area { margin:10px 0; }
+	
+	.custom h3.postSectionTitle { clear:both; }
+
+	.custom .to_comments { position:absolute; bottom:10px; right:0; margin:0; background-position:left -594px; padding:0 0 0 20px; }
+	
+	.custom a.more-link { 
+		/* ---- float:left; ---- */
+		/* ---- background: none repeat scroll 0 0 #3B2313; ---- */ 
+		/* ---- color: #E1D1C4; ---- */
+		/* ---- -moz-border-radius: 4px 4px 4px 4px; ---- */
+		/* ---- padding: 0 5px; ---- */
+	width: auto;
+	height: 20px important!;
+	cursor: pointer;
+	padding:4px 10px 4px 10px;
+	margin:0px;
+	color: #FFFFFF;
+	font-family: "Trebuchet MS", Tahoma, arial, helvetica, sans-serif;
+	font-size: 12px;
+	border-radius: 4px;
+	text-decoration:none;
+	float:right;
+	background: #88502b; /* Old browsers */
+	background: -moz-linear-gradient(top,  #88502b 0%, #ec9939 0%, #c66717 100%, #c66717 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#88502b), color-stop(0%,#ec9939), color-stop(100%,#c66717), color-stop(100%,#c66717)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #88502b 0%,#ec9939 0%,#c66717 100%,#c66717 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #88502b 0%,#ec9939 0%,#c66717 100%,#c66717 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #88502b 0%,#ec9939 0%,#c66717 100%,#c66717 100%); /* IE10+ */
+	background: linear-gradient(top,  #88502b 0%,#ec9939 0%,#c66717 100%,#c66717 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ec9939', endColorstr='#c66717',GradientType=0 ); /* IE6-9 */
+	}
+
+.custom a.more-link:hover {
+	background: none repeat scroll 0 0 #C66717 !important;
+	color: #FFFFFF;
+	cursor: pointer;
+}
+	
+	.custom .prev_next { padding:10px 0 0; border:0; }
+	
+	.custom .prev_next p { font-size: .7em; font-weight: bold; line-height: 1em; }
+
+	.custom .prev_next a { letter-spacing:0; font-weight: normal; }
+	
+	
+/* custom  sitemap page */
+	.custom .sitemap h3 {margin-top: 0;}
+	.custom .sitemap ul {font-size: .85em; }
+	.custom .sitemapl { float: left; width: 30%;}
+	.custom .sitemapr { float: right; width: 65%;}
+
+	.custom #archive_intro { margin-bottom: 1.2em; }
+
+/* ---- postFooter ---- */	
+
+    .custom #footer { display: none; }
+	.custom .postFooter { background:#f3efec;margin:20px 0 0; }
+	
+	.custom .postFooter .top { } /* background:#ffffff;border-bottom:1px solid #C66717;padding:10px 0; */
+
+	.custom .shareLinksWrap { width:31%;padding:10px;float:left; }
+	.custom .shareLinksWrap h4,
+	.custom .similarPostsWrap h4 { color:#C66717; }
+	
+	.custom .shareLinksWrap a,
+	.custom .similarPostsWrap a { color:#D47B22; }
+	.custom .similarPostsWrap a:hover { color:#C66717; }
+
+    .custom .similarPostsWrap { width:90%;padding:10px;float:left; }
+	.custom .similarPostsWrap li { list-style-type: decimal; }
+	
+/*-----------------------------------------------------------------------------*/
+/*------------------------- comments ------------------------------------------*/
+/*-----------------------------------------------------------------------------*/	
+	
+	.custom #disqus_thread { margin:0 9px 10px; padding:0 0 10px; }
+	.custom #dsq-comments-title { margin-top: 10px; margin-bottom: 10px; }
+	.dsq-brlink { display:none; }
+
+/*-----------------------------------------------------------------------------*/
+/*------------------------- sidebar 1 -----------------------------------------*/
+/*-----------------------------------------------------------------------------*/
+	.custom li.widget_tubepress { margin-bottom:0; }
+	.custom .tubepress_thumb { line-height:120%; }
+	.custom .tubepress_thumbnail_area { margin-top:0; }
+	.custom .tubepress_meta { text-align:center;float:none; }
+	.custom .tubepress_thumb img { width:160px !important;height:130px !important;}
+
+
+
+
+
+
+
+
+
+
+/*-----------------------------------------------------------------------------*/
+/*------------------------- sidebar 2 -----------------------------------------*/
+/*-----------------------------------------------------------------------------*/
+	.custom .subscribe { border:0; }
+	
+	.custom .subscribe strong,
+	.custom .subscribe .freeOffer p {
+		text-align:center;
+	}
+	
+	.custom .subscribe .freeOffer {
+		background:url(http://www.productivemuslim.com/images/ProM_CoverSm.jpg) no-repeat;
+		padding:125px 0 0;
+	}
+		
+	.custom .subscribe .freeOffer p {
+		padding:0 0 0 10px;
+		float:left;
+		line-height:130%;
+		
+	}
+		
+	.custom .subscribe strong.subTitle {
+		text-transform:uppercase;
+		color:#C66717;
+		margin:0 0 10px;
+		display:block;
+	}
+	
+	.custom .subscribe .mailchimpSignup { margin:5px 0; }
+		
+	
+	.custom .subscribe input.emailField,
+	.custom .subscribe input.nameField,
+	.custom .subscribe input.submitBtn {
+		width:145px;
+		height:17px;		
+		float:left;
+		background-color:transparent;
+		background-image:url("/images/subscribe-fields.png");
+		background-position: left center;
+		background-repeat:no-repeat;
+		border:0 none;
+		float:left;
+		font-size:13px;
+		line-height:17px;
+		margin-left:3px;
+		margin-right:8px;
+		margin-top:2px;
+		outline:medium none;
+		padding:8px;
+	}
+	
+	.custom .subscribe input.emailField {
+		margin-bottom: 5px;
+	}
+
+	.custom .subscribe input.nameField {
+		background-position: left top;
+	}
+
+	.custom .subscribe input.submitBtn {
+		background-position: left bottom;
+		width: 160px; height: 33px; 
+		padding: 6px 8px;
+		font-size: 16px;
+		color: white;
+	}
+	
+	.custom .subscribe a.rss {
+		background-position:left -494px;
+		padding:10px 0 10px 40px;
+		margin:7px 0 0;
+		display:block;
+		clear:both;
+	}
+	
+	.custom .subscribe ul li {
+		font-size: 10px;
+		float: left; 
+	}
+	.custom .subscribe ul li input[type="checkbox"] {
+		margin: 0 5px; 
+	
+	}
+
+	.custom .fbWrap { margin-top:0px; }
+
+	.custom ul.twitter { padding-top:4px; }
+
+
+
+/*-----------------------------------------------------------------------------*/
+/*------------------------- prefoot -------------------------------------------*/
+/*-----------------------------------------------------------------------------*/
+	.custom #preFoot {
+		background-color:#f3efec;
+		color:#3B2313;
+	}
+	
+	.custom #preFoot h3 {
+		margin:0 0 10px;
+	}
+
+	.custom #preFoot h3 a {
+		color:#E1D1C4;
+	}
+	
+	.custom #preFoot h3 a:hover {
+		color:#C66717;
+	}
+	
+	.custom #preFoot .about {
+		width:220px;
+	}
+	
+	.custom #preFoot .resources {
+		width:360px;
+	}
+	
+	.custom #preFoot .resources li, .custom #preFoot .projects li { 
+		margin:0 0 10px; font-size: 14px;
+	}
+	
+	.custom #preFoot li img { margin:0 10px 10px 0; }
+	
+	.custom #preFoot .projects {
+		width:300px;
+		position:relative;
+	}
+
+	.custom #preFoot .about,
+	.custom #preFoot .resources,
+	.custom #preFoot .projects { position:relative; }
+
+	.custom #preFoot .about,
+	.custom #preFoot .resources,
+	.custom #preFoot .projects,
+	.custom #preFoot .resources img,
+	.custom .footerMenu li { float:left; }
+	
+	.custom #preFoot p { padding:0 10px; }	
+
+	.custom #preFoot ul { padding:0 0 0 10px; }
+	
+	.custom #footerEnd { font-size: 120%; margin:10px 0 20px 10px; display: block; float: right; }	
+	.custom #footerEnd li { float:left; padding-left: 5px; }
+	.custom .projects p.copyrightInfo { position:absolute;bottom:10px;left:0; }
+
+
+
+
+/*-----------------------------------------------------------------------------*/
+/*------------------------- hide text -----------------------------------------*/
+/*-----------------------------------------------------------------------------*/
+	.custom #socialWrap a,
+	.custom h1#tagline,
+	.custom .searchBtn,
+	.custom a#tagline,
+	.custom #countdown-logo,
+	.hideText {
+				text-indent:-9999px;
+				overflow:hidden;
+				display:block;
+				*text-transform:capitalize;
+				*font-size:0;
+			}
+
+
+
+
+
+/*-----------------------------------------------------------------------------*/
+/*------------------------- ie6 display ---------------------------------------*/
+/*-----------------------------------------------------------------------------*/
+	.custom #preFoot li img,
+	.custom #feature_box ul.sidebar_list li ul li {
+		_display:inline;
+	}
+
+
+
+
+
+
+
+/*-----------------------------------------------------------------------------*/
+/*-------------------------- clearfix -----------------------------------------*/
+/*-----------------------------------------------------------------------------*/	
+	.custom #feature_box:after,
+	.custom .postFooter:after,
+	.custom .subscribe .freeOffer:after,
+	.custom #preFoot:after,
+	.custom #preFoot .resources li:after,
+	.custom .footerMenu:after,
+	.custom .footerMenu ul:after,
+	.custom .menu-top-menu-container:after,
+	.custom #feature_box ul.featurePostSet:after,
+	.custom .subscribe .mailchimpSignup:after,
+	.clearfix:after {
+			content: ".";
+			display: block;
+			height: 0;
+			clear: both;
+			visibility: hidden;
+			}
+	
+	.custom #feature_box,
+	.custom .postFooter,
+	.custom .subscribe .freeOffer,
+	.custom #preFoot,
+	.custom #preFoot .resources li,
+	.custom .footerMenu,
+	.custom .footerMenu ul,
+	.custom .menu-top-menu-container,
+	.custom #feature_box ul.featurePostSet,
+	.custom .subscribe .mailchimpSignup,
+	.clearfix {
+			*display: inline-block;
+			}
+
+
+
+
+
+/*-----------------------------------------------------------------------------*/
+/*------------------------- countdown page ------------------------------------*/
+/*-----------------------------------------------------------------------------*/
+
+
+	.custom.eid-mubarak #header_area,
+		.custom.eid-mubarak #content,
+		.custom.eid-mubarak #sidebars,
+		.custom.eid-mubarak #footer_area { 
+			display: none;
+		}
+
+	.custom.eid-mubarak h1 { font-size: 36px; margin-bottom: 14px; }
+	.custom.eid-mubarak h2 { font-size: 24px; padding-bottom: 14px; }
+	.custom.eid-mubarak p { font-size: 14px; }
+	.custom.eid-mubarak #countdown-logo {
+		margin-bottom: 20px;
+	}
+
+	.custom.eid-mubarak #content_box {
+		width: 500px; 
+		margin-left: 245px; 
+		margin-top: 40px;
+	}
+
+	.custom.eid-mubarak #cntdwn { 
+		font-size: 24px;
+		margin-top: 20px;
+	}
+	.custom.eid-mubarak #socialWrap { 
+		position: relative;
+		bottom: 0px;
+		right: 10px;
+		margin-top: 10px;
+	}
+	
+	.custom.eid-mubarak #mc_embed_signup { float: left; margin-right: 20px; }
+	
+	
+/*-----------------------------------------------------------------------------*/
+/*------------------------- breadcrumbs    ------------------------------------*/
+/*-----------------------------------------------------------------------------*/
+	
+.custom #breadcrumbs { margin: 0 20px 10px 10px; }	
+
+
+/* author box */
+.custom .post-author { background:#F9F9F9; border:1px solid #DDD; margin:10px; overflow:hidden; padding:1.4em; }
+.custom .post-author img { 	background-color:#fff; 	padding:5px; border: 1px solid #ddd; float: left; margin-right: 1.5em;  }
+.custom .post-author h4 { color: #666; font-size: 1.5em; margin-bottom: 10px; }
+.custom .post-author p { color: #333; font-size: 13px; line-height:1.4em; margin-bottom: 12px; }
+
+/*-------------------max banner ad code remover----------------------------------------------------------*/
+#head-banner468 span {font-size: 0px !important;} 
+#head-banner468 span a {font-size: 0px !important;} 
+
+/*------------------Top Articles widget style---------------------------------------------------*/
+#wpp-4 {/* background:#f3efec; */}
+#wpp-4 ul {/* margin-top:10px; */}
+#wpp-4 ul li {border-bottom: 1px solid #CCCCCC;margin: 0; padding:5px 10px;}
+#wpp-4 ul li:last-child {border-bottom: none;}
+#wpp-4 ul li a{font-size:12px;}
+
+/*-------------------Menu Edit------------------------------------*/
+
+#menu-item-1559 a:active {color:#c66717 !important;}
+
+/*-------------------Footer------------------------------------*/
+.preFootn {
+	float: left;
+	margin: 0 3.5% 0 0;
+	width: 20%;
+	font-size: 12px;
+	line-height: 18px;
+	overflow: hidden;
+	padding: 10px;
+}
+.preFootn ul a {
+	text-decoration: none;
+	color:#C66717;
+}
+.preFootn ul a:hover {
+	text-decoration: underline;
+}
+.preFootn ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.preFootn ul li {
+	margin: 0;
+	padding: 0px 0px 5px 0px;
+	word-wrap: break-word;
+}
+.preFootn ul li:last-child {
+	margin: 0;
+	padding: 0px 0px 5px 0px;
+	word-wrap: break-word;
+}
+.preFootn-title {
+	border-radius: 4px 4px 4px 4px;
+	font-family: "Trebuchet MS", Tahoma, arial, helvetica, sans-serif;
+	font-size: 14px;
+	font-weight:normal;
+	padding: 5px 10px 5px 10px;
+	text-transform: uppercase;
+	color: #E1D1C4;
+	overflow:hidden;
+	float: left;
+	margin: 0 3.5% 0 0;
+	width: 20%;
+}
+.preFootn-title-container {
+	border-radius: 4px 4px 4px 4px;
+	font-family: "Trebuchet MS", Tahoma, arial, helvetica, sans-serif;
+	font-size: 14px;
+	margin: 0;
+	font-weight:normal;
+	padding: 0;
+	text-transform: uppercase;
+	color: #E1D1C4;
+	overflow:hidden;
+	background: #3b2313;
+}
+.preFootn-container {
+	margin: 0;
+	padding: 0;
+	border:1px solid #DDDDDD;
+	border-radius:4px;
+	overflow:hidden;
+	background: #ffffff; /* Old browsers */
+	background: #feffff; /* Old browsers */
+	background: -moz-linear-gradient(top,  #feffff 40%, #f3efec 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(40%,#feffff), color-stop(100%,#f3efec)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #feffff 40%,#f3efec 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #feffff 40%,#f3efec 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #feffff 40%,#f3efec 100%); /* IE10+ */
+	background: linear-gradient(top,  #feffff 40%,#f3efec 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feffff', endColorstr='#f3efec',GradientType=0 ); /* IE6-9 */
+}
+.textpreFoot {
+	padding:0px;
+	overflow:hidden;
+	width:auto;
+	margin:0;
+	text-align:center;
+}
+#fourth {
+	margin: 0;
+	float:right;
+}
+#footerEndn {
+	border-top: 1px solid #DDDDDD;
+	clear: both;
+	color: #000;
+	font-size: 12px;
+	line-height: 16px;
+	padding: 10px 0 10px 0;
+	text-align: right;
+	overflow:hidden;
+	width:100%;
+	margin: 10px 0 0 0;
+}
+#footerEndn a {
+	color:#C66717;
+	text-decoration: none;
+}
+#footerEndn a:hover {
+	color:#C66717;
+}
+#mc_embed_signupn{
+	clear:left;
+	padding:0;
+	margin:0;
+}
+#footerEndSocial {
+	width:auto;
+	overflow: hidden;
+	padding:0;
+	margin:0;
+	float:left;
+}
+#footerEndCopyright {
+	width:auto;
+	overflow: hidden;
+	padding:0;
+	margin:0;
+	float:right;
+}
+#mc_embed_signupn input[type=email]{
+	border-radius: 4px 4px 4px 4px;
+	border:1px solid #DDDDDD;
+	margin: 5px 0px 5px 0px;
+	padding: 5px;
+	background:#FFFFFF;
+	font-family: "Trebuchet MS",Tahoma,arial,helvetica,sans-serif;
+	width:170px;
+	font-size: 12px;
+}
+#mc_embed_signupn input[type=submit] {
+	width: auto;
+	height: 20px important!;
+	cursor: pointer;
+	padding:5px 20px 5px 20px;
+	margin:0;
+	border:0;
+	color: #FFFFFF;
+	font-family: "Trebuchet MS", Tahoma, arial, helvetica, sans-serif;
+	font-size:12px;
+	text-transform:uppercase;
+	border-radius: 4px 4px 4px 4px;
+	background: #88502b; /* Old browsers */
+	background: -moz-linear-gradient(top,  #88502b 0%, #ec9939 0%, #c66717 100%, #c66717 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#88502b), color-stop(0%,#ec9939), color-stop(100%,#c66717), color-stop(100%,#c66717)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #88502b 0%,#ec9939 0%,#c66717 100%,#c66717 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #88502b 0%,#ec9939 0%,#c66717 100%,#c66717 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #88502b 0%,#ec9939 0%,#c66717 100%,#c66717 100%); /* IE10+ */
+	background: linear-gradient(top,  #88502b 0%,#ec9939 0%,#c66717 100%,#c66717 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ec9939', endColorstr='#c66717',GradientType=0 ); /* IE6-9 */
+}
+.textwidget {
+	padding:10px;
+	overflow:hidden;
+	font-size:12px;
+}
+.textwidget input[type=text],
+textarea {
+	border-radius: 4px 4px 4px 4px;
+	border:1px solid #DDDDDD;
+	margin: 0px 0px 5px 0px;
+	padding: 5px;
+	background:#FFFFFF;
+	font-family: "Trebuchet MS",Tahoma,arial,helvetica,sans-serif;
+	width:120px;
+	font-size: 12px;
+}
+.textwidget button {
+	width: 158px;
+	height: 20px important!;
+	cursor: pointer;
+	padding:5px 0px 5px 0px;
+	margin:0;
+	border:0;
+	color: #FFFFFF;
+	font-family: "Trebuchet MS", Tahoma, arial, helvetica, sans-serif;
+	font-size:12px;
+	text-transform:uppercase;
+	border-radius: 4px 4px 4px 4px;
+	background: #88502b; /* Old browsers */
+	background: -moz-linear-gradient(top,  #88502b 0%, #ec9939 0%, #c66717 100%, #c66717 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#88502b), color-stop(0%,#ec9939), color-stop(100%,#c66717), color-stop(100%,#c66717)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #88502b 0%,#ec9939 0%,#c66717 100%,#c66717 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #88502b 0%,#ec9939 0%,#c66717 100%,#c66717 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #88502b 0%,#ec9939 0%,#c66717 100%,#c66717 100%); /* IE10+ */
+	background: linear-gradient(top,  #88502b 0%,#ec9939 0%,#c66717 100%,#c66717 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ec9939', endColorstr='#c66717',GradientType=0 ); /* IE6-9 */
+}
+#productivemuslim-advertise {
+	background:url(http://www.productivemuslim.com/wp-content/uploads/2012/04/Advertise-With-Us-160x160.jpg) left no-repeat;
+	border-radius:4px 4px 4px 4px;
+	overflow:hidden;
+	width:156px;
+	padding:0;
+	margin:0 auto;
+	height: 160px;
+	border:1px solid #DDDDDD;
+}
+.textwidget .morevideos {
+	width: auto;
+	height: 20px important!;
+	cursor: pointer;
+	padding:5px 20px 5px 20px;
+	margin:0 auto;
+	border:0;
+	color: #FFFFFF;
+	font-family: "Trebuchet MS", Tahoma, arial, helvetica, sans-serif;
+	font-size:12px;
+	text-transform:uppercase;
+	text-align:center;
+	border-radius: 4px 4px 4px 4px;
+	background: #88502b; /* Old browsers */
+	background: -moz-linear-gradient(top,  #88502b 0%, #ec9939 0%, #c66717 100%, #c66717 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#88502b), color-stop(0%,#ec9939), color-stop(100%,#c66717), color-stop(100%,#c66717)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #88502b 0%,#ec9939 0%,#c66717 100%,#c66717 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #88502b 0%,#ec9939 0%,#c66717 100%,#c66717 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #88502b 0%,#ec9939 0%,#c66717 100%,#c66717 100%); /* IE10+ */
+	background: linear-gradient(top,  #88502b 0%,#ec9939 0%,#c66717 100%,#c66717 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ec9939', endColorstr='#c66717',GradientType=0 ); /* IE6-9 */
+}
+.morevideos a{
+	color: #FFFFFF;
+}
+.maxbannerads {
+	padding:0;
+	margin:11px 0px 0px 0px;
+	border: 0px solid #DDDDDD;
+	border-radius:0px;
+	overflow:hidden;
+
+}
+hr {
+	border: 0;
+	color: #DDDDDD;
+	background-color: #DDDDDD;
+	height: 1px;
+	width: 100%;
+	text-align: left;
+}
+.header-container {
+	overflow:hidden;
+	width:auto;
+	padding:0;
+	margin:0;
+}
+.header-container-left {
+	overflow:hidden;
+	width:auto;
+	padding:20px 0 0 0;
+	margin:0;
+	position:absolute;
+}
+.header-container-left-logo {
+	overflow:hidden;
+	width:auto;
+	padding:0;
+	margin:0;
+	float:left;
+}
+.header-container-left-slogan {
+	overflow:hidden;
+	width:auto;
+	padding:30px 0 0 20px;
+	margin:0;
+	float:left;
+}
+.header-container-right {
+	overflow:hidden;
+	width:auto;
+	padding:0;
+	margin:0;
+	float:right;
+}
+.custom #feature_box ul li {
+    height: 300px !important;
+}
+
+#commentform #comment {
+	border: 1px solid #ddd;
+}
+
+
+function pagination_below () {
+?>
+<div align="left">
+<?php if(function_exists('wp_pagenavi')) { wp_pagenavi(); } ?>
+<br />
+</div>
+<?php
+}
+add_action('thesis_hook_before_footer', 'pagination_below');
+
+
+
+/* Page Navigation - Hamzah*/
+.post_box, .teasers_box, .full_width #content_box .page {
+margin: 1px;
+}
+
