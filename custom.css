@@ -1272,19 +1272,6 @@ hr {
 	border: 1px solid #ddd;
 }
 
-
-function pagination_below () {
-?>
-<div align="left">
-<?php if(function_exists('wp_pagenavi')) { wp_pagenavi(); } ?>
-<br />
-</div>
-<?php
-}
-add_action('thesis_hook_before_footer', 'pagination_below');
-
-
-
 /* Page Navigation - Hamzah*/
 .post_box, .teasers_box, .full_width #content_box .page {
 margin: 1px;
