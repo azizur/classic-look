@@ -68,7 +68,7 @@
 	    <a target="_top" href="http://feeds.feedburner.com/ProductiveMuslim" onClick="_gaq.push(['_trackEvent','RSSfeed-Button-Footer','Visited RSS Feed Page from Footer','Widget-Footer-StayInTouch',,false]);"><img alt="ProductiveMuslim RSS" src="http://www.productivemuslim.com/wp-content/uploads/2012/04/rss.png"></a>
 	</div>
 	<div id="footerEndCopyright">
-	    <a href="/about/">About</a> | <a href="/site-map/">Site Map</a> | <a href="/privacy-policy/">Privacy Policy</a> |  <a href="/terms-of-service/">Terms of Service</a> |  <a href="/refund-policy/">Refund Policy</a> | <a href="/contact-http://productivemuslim.com/wp-admin/plugins.php?page=cloudflareus">Contact</a> | &copy; 2008-2013 ProductiveMuslim.com
+	    <a href="/about/">About</a> | <a href="/site-map/">Site Map</a> | <a href="/privacy-policy/">Privacy Policy</a> |  <a href="/terms-of-service/">Terms of Service</a> |  <a href="/refund-policy/">Refund Policy</a> | <a href="/contact-us">Contact</a> | &copy; 2008-<? echo date('Y'); ?> ProductiveMuslim.com
 	</div>
     </div><!-- #footerEnd -->
 </div><!-- #prefooterx -->
