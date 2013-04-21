@@ -128,9 +128,9 @@ in the User's Guide:
 	}
 	
 	/* 16px */
-	{
+/*	{
 		font-size:160%;
-	}
+	}*/
 
 	/* 16px --> 14px */
 	.custom .to_comments {
@@ -340,7 +340,7 @@ in the User's Guide:
 	.custom .subscribe a.rss,
 	.custom #countdown-logo,
 	.custom .to_comments {
-		background:url(http://www.productivemuslim.com/images/proMSprite.png) no-repeat;
+		background:url(../img/prom-sprite.png) no-repeat;
 	}
 
 
@@ -398,7 +398,7 @@ in the User's Guide:
 	padding: 2px 20px 2px 2px;
 	border-radius: 4px;
 	background-color:#88502B;
-	background-image:url("http://www.productivemuslim.com/wp-content/uploads/searchbutton.png");
+	background-image:url("../img/search-button.png");
 	background-repeat:no-repeat;
 	background-position: 99% 1px;
 	border:none;
@@ -421,7 +421,7 @@ in the User's Guide:
 	}
 
 	.custom input#searchsubmit.my-search-image {
-		background:url("http://www.productivemuslim.com/wordpress/wp-content/uploads/searchbutton.png") no-repeat 50% 50%;
+		background:url("../img/search-button.png") no-repeat 50% 50%;
 		cursor:pointer;
    		border:none;
 		height:17px;
@@ -612,7 +612,7 @@ in the User's Guide:
 		/* ---- -moz-border-radius: 4px 4px 4px 4px; ---- */
 		/* ---- padding: 0 5px; ---- */
 	width: auto;
-	height: 20px important!;
+	height: 20px !important;
 	cursor: pointer;
 	padding:4px 10px 4px 10px;
 	margin:0px;
@@ -1123,7 +1123,7 @@ in the User's Guide:
 }
 #mc_embed_signupn input[type=submit] {
 	width: auto;
-	height: 20px important!;
+	height: 20px !important;
 	cursor: pointer;
 	padding:5px 20px 5px 20px;
 	margin:0;
@@ -1160,7 +1160,6 @@ textarea {
 }
 .textwidget button {
 	width: 158px;
-	height: 20px important!;
 	cursor: pointer;
 	padding:5px 0px 5px 0px;
 	margin:0;
@@ -1191,7 +1190,7 @@ textarea {
 }
 .textwidget .morevideos {
 	width: auto;
-	height: 20px important!;
+	height: 20px !important;
 	cursor: pointer;
 	padding:5px 20px 5px 20px;
 	margin:0 auto;
@@ -1271,6 +1270,7 @@ hr {
 #commentform #comment {
 	border: 1px solid #ddd;
 }
+
 
 /* Page Navigation - Hamzah*/
 .post_box, .teasers_box, .full_width #content_box .page {

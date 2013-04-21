@@ -1,0 +1,209 @@
+/*
+Welcome to Custom CSS!
+
+CSS (Cascading Style Sheets) is a kind of code that tells the browser how
+to render a web page. You may delete these comments and get started with
+your customizations.
+
+By default, your stylesheet will be loaded after the theme stylesheets,
+which means that your rules can take precedence and override the theme CSS
+rules. Just write here what you want to change, you don't need to copy all
+your theme's stylesheet content.
+
+*/
+
+#content_area {
+    margin-bottom: 20px;
+}
+
+
+/* optinskins start */
+div.topnewsletter-container {
+	margin: 0;
+	padding: 10px;
+	border: 1px solid #DDDDDD;
+	border-radius: 4px;
+	overflow: hidden;
+	background: #ffffff;
+/* Old browsers */
+	background: #feffff;
+/* Old browsers */
+	background: -moz-linear-gradient(top,#feffff 40%,#f3efec 100%);
+/* FF3.6+ */
+	background: -webkit-gradient(linear,left top,left bottom,color-stop(40%,#feffff),color-stop(100%,#f3efec));
+/* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,#feffff 40%,#f3efec 100%);
+/* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,#feffff 40%,#f3efec 100%);
+/* Opera 11.10+ */
+	background: -ms-linear-gradient(top,#feffff 40%,#f3efec 100%);
+/* IE10+ */
+	background: linear-gradient(top,#feffff 40%,#f3efec 100%);
+/* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#feffff',endColorstr='#f3efec',GradientType=0);
+/* IE6-9 */
+	width: 358px;
+	float: right;
+	font-size: 12px;
+}
+
+.inputemail {
+	border-radius: 4px 4px 4px 4px;
+	border: 1px solid #DDDDDD;
+	margin: 5px 0;
+	padding: 5px;
+	background: #FFFFFF;
+	font-family: "Trebuchet MS", Tahoma, arial, helvetica, sans-serif;
+	font-size: 12px;
+}
+
+div.footerwidget button,
+div.topnewsletter-container button {
+	width: auto;
+	height: 20px important!;
+	cursor: pointer;
+	padding: 5px 20px;
+	margin: 0;
+	border: 0;
+	color: #FFFFFF;
+	font-family: "Trebuchet MS", Tahoma, arial, helvetica, sans-serif;
+	font-size: 12px;
+	text-transform: uppercase;
+	border-radius: 4px 4px 4px 4px;
+	background: #88502b;
+/* Old browsers */
+	background: -moz-linear-gradient(top,#88502b 0%,#ec9939 0%,#c66717 100%,#c66717 100%);
+/* FF3.6+ */
+	background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#88502b),color-stop(0%,#ec9939),color-stop(100%,#c66717),color-stop(100%,#c66717));
+/* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,#88502b 0%,#ec9939 0%,#c66717 100%,#c66717 100%);
+/* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,#88502b 0%,#ec9939 0%,#c66717 100%,#c66717 100%);
+/* Opera 11.10+ */
+	background: -ms-linear-gradient(top,#88502b 0%,#ec9939 0%,#c66717 100%,#c66717 100%);
+/* IE10+ */
+	background: linear-gradient(top,#88502b 0%,#ec9939 0%,#c66717 100%,#c66717 100%);
+/* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ec9939',endColorstr='#c66717',GradientType=0);
+/* IE6-9 */
+}
+
+div.topnewsletter-container-left {
+	width: 274px;
+	float: left;
+	overflow: hidden;
+	padding: 0;
+	margin: 0;
+}
+
+div.topnewsletter-container-left-title {
+	width: auto;
+	overflow: hidden;
+	padding: 0;
+	margin: 5px 0 0;
+	font-size: 20px;
+	line-height: 20px;
+	color: #c66717;
+}
+
+div.topnewsletter-container-left-form {
+	width: auto;
+	overflow: hidden;
+	padding: 10px 0 0;
+	margin: 0;
+}
+
+div.topnewsletter-container-left-form-input {
+	width: auto;
+	overflow: hidden;
+	padding: 0;
+	margin: 0;
+	vertical-align: middle;
+}
+
+div.topnewsletter-container-right {
+	width: 84px;
+	float: right;
+	overflow: hidden;
+	padding: 0;
+	margin: 0;
+}
+
+/* optinskins end */
+.start-here-sidebar {
+	font-size: 1.4em;
+	line-height: 1.2em;
+}
+
+.start-here-sidebar img {
+	float: left;
+	margin-right: 12px;
+}
+
+.inputemail {
+	border-radius: 4px 4px 4px 4px;
+	border: 1px solid #DDDDDD;
+	margin: 0 0 5px;
+	padding: 5px;
+	background: #FFFFFF;
+}
+
+h3 {
+	padding: 3px 10px;
+	text-transform: uppercase;
+	color: #E1D1C4;
+	letter-spacing: -.01em;
+	line-height: normal;
+	background: #3B2313;
+	border-radius: 5px;
+}
+
+#sidebar_1 .sidebar-skin-intro {
+	line-height: 1.4em;
+	margin-bottom: .5em;
+}
+
+#sidebar_1 .sidebar-skin-submit {
+	text-align: center;
+	margin: .5em;
+}
+
+.paging-navigation .screen-reader-text {
+    display: none;
+}
+
+.paging-navigation .nav-previous {
+    float: left;
+}
+
+.paging-navigation .nav-next {
+    float: right;
+}
+
+.paging-navigation .nav-previous a,
+.paging-navigation .nav-next a { 
+	width: auto;
+	cursor: pointer;
+	padding:4px 10px 4px 10px;
+	margin:0px;
+	color: #FFFFFF;
+	font-family: "Trebuchet MS", Tahoma, arial, helvetica, sans-serif;
+	font-size: 12px;
+	border-radius: 4px;
+	text-decoration:none;
+	background: #88502b; /* Old browsers */
+	background: -moz-linear-gradient(top,  #88502b 0%, #ec9939 0%, #c66717 100%, #c66717 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#88502b), color-stop(0%,#ec9939), color-stop(100%,#c66717), color-stop(100%,#c66717)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #88502b 0%,#ec9939 0%,#c66717 100%,#c66717 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #88502b 0%,#ec9939 0%,#c66717 100%,#c66717 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #88502b 0%,#ec9939 0%,#c66717 100%,#c66717 100%); /* IE10+ */
+	background: linear-gradient(top,  #88502b 0%,#ec9939 0%,#c66717 100%,#c66717 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ec9939', endColorstr='#c66717',GradientType=0 ); /* IE6-9 */
+}
+
+.paging-navigation .nav-previous a:hover,
+.paging-navigation .nav-next a:hover {
+	background: none repeat scroll 0 0 #C66717 !important;
+	color: #FFFFFF;
+	cursor: pointer;
+}
