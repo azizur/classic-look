@@ -502,14 +502,7 @@ in the User's Guide:
 		color:#C66717;
 		margin:0 0 5px;
 	}
-	.custom .page h1 {
-	    margin-bottom: 1em;
-	}
-	
-	.custom .headline_area p.author { position:relative; }
 	.custom span.to_comments { background-position:left -598px;bottom:0; }
-	.custom .metaInfo { margin:0 0 20px; }
-	.custom .metaInfo p { margin:0; }
 	.custom .metaInfo .topSocial { margin:10px 0 0; }
 	.custom .metaInfo .topSocial span { vertical-align:middle; width:60px; }
 	

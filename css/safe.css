@@ -60,7 +60,6 @@ div.topnewsletter-container {
 div.footerwidget button,
 div.topnewsletter-container button {
 	width: auto;
-	height: 20px important!;
 	cursor: pointer;
 	padding: 5px 20px;
 	margin: 0;
@@ -168,42 +167,86 @@ h3 {
 	margin: .5em;
 }
 
-.paging-navigation .screen-reader-text {
+.paging-navigation .screen-reader-text,
+.post-navigation .screen-reader-text {
     display: none;
 }
 
-.paging-navigation .nav-previous {
+.paging-navigation .nav-previous,
+.post-navigation .nav-previous {
     float: left;
+    text-align: left;
 }
 
-.paging-navigation .nav-next {
+.paging-navigation .nav-next,
+.post-navigation .nav-next {
     float: right;
+    text-align: right;
 }
 
-.paging-navigation .nav-previous a,
-.paging-navigation .nav-next a { 
-	width: auto;
-	cursor: pointer;
-	padding:4px 10px 4px 10px;
-	margin:0px;
-	color: #FFFFFF;
-	font-family: "Trebuchet MS", Tahoma, arial, helvetica, sans-serif;
-	font-size: 12px;
-	border-radius: 4px;
-	text-decoration:none;
-	background: #88502b; /* Old browsers */
-	background: -moz-linear-gradient(top,  #88502b 0%, #ec9939 0%, #c66717 100%, #c66717 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#88502b), color-stop(0%,#ec9939), color-stop(100%,#c66717), color-stop(100%,#c66717)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top,  #88502b 0%,#ec9939 0%,#c66717 100%,#c66717 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top,  #88502b 0%,#ec9939 0%,#c66717 100%,#c66717 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top,  #88502b 0%,#ec9939 0%,#c66717 100%,#c66717 100%); /* IE10+ */
-	background: linear-gradient(top,  #88502b 0%,#ec9939 0%,#c66717 100%,#c66717 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ec9939', endColorstr='#c66717',GradientType=0 ); /* IE6-9 */
+.paging-navigation .nav-previous,
+.paging-navigation .nav-next,
+.post-navigation .nav-previous,
+.post-navigation .nav-next {
+    min-height: 30px;
+    width: 45%;
+    cursor: pointer;
+    padding:4px 10px 4px 10px;
+    margin:0px;
+    color: #FFFFFF;
+    font-family: "Trebuchet MS", Tahoma, arial, helvetica, sans-serif;
+    font-size: 12px;
+    border-radius: 4px;
+    text-decoration:none;
+    background: #88502b; /* Old browsers */
+    background: -moz-linear-gradient(top,  #88502b 0%, #ec9939 0%, #c66717 100%, #c66717 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#88502b), color-stop(0%,#ec9939), color-stop(100%,#c66717), color-stop(100%,#c66717)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #88502b 0%,#ec9939 0%,#c66717 100%,#c66717 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #88502b 0%,#ec9939 0%,#c66717 100%,#c66717 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #88502b 0%,#ec9939 0%,#c66717 100%,#c66717 100%); /* IE10+ */
+    background: linear-gradient(top,  #88502b 0%,#ec9939 0%,#c66717 100%,#c66717 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ec9939', endColorstr='#c66717',GradientType=0 ); /* IE6-9 */
 }
 
-.paging-navigation .nav-previous a:hover,
-.paging-navigation .nav-next a:hover {
-	background: none repeat scroll 0 0 #C66717 !important;
-	color: #FFFFFF;
-	cursor: pointer;
+.paging-navigation .nav-previous:hover,
+.paging-navigation .nav-next:hover,
+.post-navigation .nav-previous:hover,
+.post-navigation .nav-next:hover {
+    background: none repeat scroll 0 0 #C66717 !important;
+    cursor: pointer;
+}
+
+.paging-navigation a, .post-navigation a {
+    color: #FFFFFF;
+}
+
+.paging-navigation .nav-previous,
+.paging-navigation .nav-next {
+    font-size: 1.8em;
+}
+
+.post-navigation .nav-previous a .meta-title,
+.post-navigation .nav-next a .meta-title {
+    max-width: 92%; float: left; display: block;
+}
+
+.post-navigation .nav-previous a .meta-nav {
+    display: block;
+    float: left;
+    padding-top: 5px;
+    margin-right: 5px;
+}
+.post-navigation .nav-next a .meta-nav {
+    display: block; float: right;
+    padding-top: 5px;
+}
+
+
+.entry-meta {
+    font-size: 10pt;
+    margin: 8px 0;
+}
+
+.entry-meta span {
+    margin: 0 2px;
 }

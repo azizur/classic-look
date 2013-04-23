@@ -266,11 +266,11 @@ function prom_paging_nav() {
 		<div class="nav-links">
 
 			<?php if ( get_next_posts_link() ) : ?>
-			<div class="nav-previous more-link"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'twentythirteen' ) ); ?></div>
+			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> <span class="meta-title">Older posts</span>', 'twentythirteen' ) ); ?></div>
 			<?php endif; ?>
 
 			<?php if ( get_previous_posts_link() ) : ?>
-			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'twentythirteen' ) ); ?></div>
+			<div class="nav-next"><?php previous_posts_link( __( '<span class="meta-title">Newer posts</span> <span class="meta-nav">&rarr;</span>', 'twentythirteen' ) ); ?></div>
 			<?php endif; ?>
 
 		</div><!-- .nav-links -->
@@ -284,3 +284,55 @@ function prom_paging_nav() {
 //}
 //add_filter('next_posts_link_attributes', 'posts_link_attributes');
 //add_filter('previous_posts_link_attributes', 'posts_link_attributes');
+
+/**
+ * Displays navigation to next/previous post when applicable.
+ *
+ * @return void
+ */
+function prom_post_nav() {
+    global $post;
+
+    // Don't print empty markup if there's nowhere to navigate.
+    $previous = ( is_attachment() ) ? get_post( $post->post_parent ) : get_adjacent_post( false, '', true );
+    $next = get_adjacent_post( false, '', false );
+
+    if ( ! $next && ! $previous )
+            return;
+    ?>
+    <nav class="navigation post-navigation" role="navigation">
+            <h1 class="screen-reader-text"><?php _e( 'Post navigation', 'twentythirteen' ); ?></h1>
+            <div class="nav-links">
+                
+                <?php if ( $previous ) : ?>
+                <div class="nav-previous">
+                    <?php previous_post_link( '%link', _x( '<span class="meta-nav">&larr;</span> <span class="meta-title">%title</span>', 'Previous post link', 'twentythirteen' ) ); ?>
+                </div>
+                <?php endif; ?>
+                
+                <?php if ( $next ) : ?>
+                <div class="nav-next">
+                    <?php next_post_link( '%link', _x( '<span class="meta-title">%title</span> <span class="meta-nav">&rarr;</span>', 'Next post link', 'twentythirteen' ) ); ?>
+                </div>
+                <?php endif; ?>
+
+            </div><!-- .nav-links -->
+    </nav><!-- .navigation -->
+    <?php
+}
+
+
+add_filter( 'the_author', 'prom_guest_author_name' );
+add_filter( 'get_the_author_display_name', 'prom_guest_author_name' );
+
+function prom_guest_author_name( $name ) {
+    global $post;
+
+    $author = get_post_meta( $post->ID, 'guest-author', true );
+
+    if ( $author ) {
+        $name = $author;
+    }
+
+    return $name;
+}

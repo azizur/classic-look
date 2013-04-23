@@ -19,7 +19,7 @@
 		</h1>
 		<?php endif; // is_single() ?>
 
-		<div class="entry-meta metaInfo">
+		<div class="entry-meta">
 			<?php prom_entry_meta(); ?>
 			<?php edit_post_link( __( 'Edit', 'twentythirteen' ), '<span class="edit-link">', '</span>' ); ?>
 		</div><!-- .entry-meta -->
