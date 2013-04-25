@@ -209,8 +209,40 @@ in the User's Guide:
 	.custom #text-7 a { font-size: 180%; }
 	
 	.topArticles li a { width:120px !important;}
+/* ---- padding reset ---- */
+	.custom .full_width .page,
+	.custom #header,
+	.custom #footer,
+	.custom #feature_box,
+	.custom #sidebar_1 ul.sidebar_list,
+	.custom #sidebar_2 ul.sidebar_list,
+	.custom .sidebar ul.sidebar_list,
+	.sidebar ul.sidebar_list,
+	.custom .sidebar_list,
+	.custom .post_box .entry-content,
+	.custom .tubepress_thumbnail_area,
+	.custom .tubepress_thumbs {
+		padding:0 !important;
+	}
+
+/* ---- margin reset ---- */
+	.custom #header,
+	.custom #footer,
+	.custom #sidebar_1 ul.sidebar_list,
+	.custom #sidebar_2 ul.sidebar_list,
+	.custom .sidebar h3,
+	.custom .teasers_box,
+	.custom .full_width #content_box .page,
+	.custom .headline_area,
+	.custom h1#tagline,
+	.custom a#tagline,
+	.custom .post_box .entry-content {
+		margin:0 !important;
+	}
+	
 	.custom li.last { margin-right:0 !important;padding-right:0 !important;border-bottom:0 !important; }
 	
+
 
 /* ---- sidebar 2 ---- */	
 	.custom #sidebar_2 {
@@ -1225,3 +1257,9 @@ hr {
 .custom #feature_box ul li {
     height: 300px !important;
 }
+
+/* Page Navigation - Hamzah*/
+.post_box, .teasers_box, .full_width #content_box .page {
+margin: 1px;
+}
+
