@@ -267,7 +267,6 @@ dl#comment_list { border-top: 1px dotted #bbb; }
 	#respond_intro p { color: #555; }
 		#respond_intro p a { font-weight: bold; }
 		#respond_intro p a:hover { text-decoration: underline; }
-		#cancel-comment-reply-link { text-transform: uppercase; letter-spacing: 1px; color: #fff; background: #d00; border-style: solid; border-color: #ac0000; border-top-color: #fa5a5a; border-left-color: #fa5a5a; float: right; }
 .login_alert { background: #f5f5f5; border: 1px solid #ddd; }
 	.login_alert p { font-weight: bold; }
 		.login_alert p a:hover { text-decoration: underline; }
