@@ -2,6 +2,8 @@
 
 // add Productive Muslim Styles
 function prom_styles() {
+    $_theme = wp_get_theme();
+    
     $styles = array(
         'core.css',
         'layout.css',
@@ -20,7 +22,7 @@ function prom_styles() {
         $handle = 'prom-' . str_replace('.css', '', $style);
         $src = esc_url_raw( $style_url );
         $deps = array();
-        $ver = '0.0.1';
+        $ver = $_theme->Version;
         $media = 'all';
         
         wp_enqueue_style($handle, $src, $deps, $ver, $media );

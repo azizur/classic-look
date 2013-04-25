@@ -142,23 +142,8 @@
 	margin: 20px 0 0;
 }
 
-/*.comment-awaiting-moderation:before {
-	content: "\f414";
-	margin-right: 5px;
-	position: relative;
-	top: -2px;
-}
-
-.comment-reply-link:before,
-.comment-reply-login:before {
-	content: "\f412";
-	margin-right: 3px;
-}*/
-
-
 /* Comment form */
 #respond {
-	background-color: #f7f5e7;
 	padding: 30px 0;
 }
 
