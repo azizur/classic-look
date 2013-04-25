@@ -240,8 +240,6 @@ in the User's Guide:
 		margin:0 !important;
 	}
 	
-	.custom p { margin:0 0 10px; }
-
 	.custom li.last { margin-right:0 !important;padding-right:0 !important;border-bottom:0 !important; }
 	
 
@@ -1259,11 +1257,6 @@ hr {
 .custom #feature_box ul li {
     height: 300px !important;
 }
-
-#commentform #comment {
-	border: 1px solid #ddd;
-}
-
 
 /* Page Navigation - Hamzah*/
 .post_box, .teasers_box, .full_width #content_box .page {

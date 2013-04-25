@@ -10,6 +10,10 @@ function prom_styles() {
         'safe.css'
     );
     
+    if(is_single()) {
+        $styles[] = 'comments.css';
+    }
+    
     foreach($styles as $style) {
         $style_url = get_stylesheet_directory_uri() . '/css/' . $style;
         

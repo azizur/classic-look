@@ -66,7 +66,6 @@ the terms_of_service.txt file included in this package.
 #feature_box { padding-right: 2.5em; padding-left: 2.5em; }
 
 /*---:[ comments area ]:---*/
-#comments { margin-right: 2.5em; margin-left: 0em; }
 	.comments_intro, #respond_intro { margin-left: 1.2em; }
 		dl#comment_list dt, #trackback_list { padding-right: 1.2em; padding-left: 1.2em; }
 		dl#comment_list dd { padding-left: 1.2em; }
@@ -77,7 +76,6 @@ the terms_of_service.txt file included in this package.
 		dl#comment_list dl dd .format_text { padding-left: 1.5em; border-width: 0 0 0 0.063em; }
 		dl#comment_list dl dd.bypostauthor > .format_text { padding-left: 1.4em; border-width: 0 0 0 0.125em; }
 		dl#comment_list dl dd dl { padding-left: 2.4em; }
-#commentform { padding-right: 2.5em; padding-left: 1.2em; }
 .comments_closed, .login_alert { margin-left: 1.2em; }
 
 /*---:[ content elements ]:---*/
@@ -176,7 +174,6 @@ body { font-family: Georgia, "Times New Roman", Times, serif; }
 	.post_nav a { font-size: 1.6em; line-height: 1.5em; }
 
 /*---:[ comment area ]:---*/
-#comments { margin-top: 4.8em; }
 .comments_intro { margin-bottom: 1.2em; }
 	.comments_intro p { font-size: 1.4em; line-height: 1.714em; }
 		.comments_intro span { font-size: 1.714em; }
@@ -200,21 +197,10 @@ body { font-family: Georgia, "Times New Roman", Times, serif; }
 .comments_closed { margin-top: 4.8em; margin-bottom: 2.4em; }
 
 /*---:[ comment form styles ]:---*/
-#respond { margin-bottom: 4.8em; }
 #respond_intro { margin-bottom: 1.2em; }
 	#respond_intro p { font-size: 1.9em; line-height: 1.263em; }
 	#cancel-comment-reply-link { font-size: 1.1em; line-height: 1em; padding: 0.545em 0.727em; border-width: 0.182em; }
 .login_alert { margin-top: 4.8em; margin-bottom: 2.4em; padding: 1.2em; }
-#commentform { padding-top: 1.2em; }
-	#commentform p, .login_alert p { font-size: 1.6em; line-height: 1.5em; }
-	#commentform p.comment_box { line-height: 0.75em; }
-		#commentform label { padding-left: 0.75em; }
-		#commentform textarea { height: 12em; line-height: 1.5em; }
-		#commentform span.allowed { width: 97.3%; padding-top: 0.438em; padding-bottom: 0.438em; border-width: 0 0.063em 0.063em 0.063em; }
-			#commentform span.allowed span { font-size: 0.875em; line-height: 1.714em; padding: 0 0.5em; }
-	/* Support for the highly-recommended Subscribe to Comments Plugin */
-	#commentform p.subscribe-to-comments { font-size: 1.6em; }
-		#commentform p.subscribe-to-comments label { font-size: 1em; }
 
 /*---:[ sidebar styles ]:---*/
 .sidebar { }
@@ -242,8 +228,7 @@ body { font-family: Georgia, "Times New Roman", Times, serif; }
 
 /*---:[ form inputs ]:---*/
 input, textarea { font-family: Georgia, "Times New Roman", Times, serif; }
-.format_text input, #commentform input, #commentform textarea { width: 45%; padding: 0.188em; border-width: 0.063em 0.063em 0.063em 0.063em; }
-#commentform textarea { width: 96%; }
+#commentform textarea { width: 98%; }
 .format_text input.form_submit, #commentform .form_submit { font-size: 1.125em; padding: 0.278em 0.222em; }
 .sidebar .text_input, .sidebar .form_submit { padding: 0.308em; font-family: Georgia, "Times New Roman", Times, serif; }
 .sidebar input[type="text"], .sidebar input[type="submit"] { padding: 0.308em; font-family: Georgia, "Times New Roman", Times, serif; }

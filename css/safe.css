@@ -57,6 +57,7 @@ div.topnewsletter-container {
 	font-size: 12px;
 }
 
+#commentform #submit,
 div.footerwidget button,
 div.topnewsletter-container button {
 	width: auto;
@@ -243,10 +244,42 @@ h3 {
 
 
 .entry-meta {
-    font-size: 10pt;
-    margin: 8px 0;
+    clear: both;
+    font-size: 14px;
 }
 
-.entry-meta span {
-    margin: 0 2px;
+.entry-meta > span {
+    margin-right: 20px;
 }
+
+nav.navigation .nav-links{
+    display: block;
+    clear: both;
+    position: relative;
+    overflow: hidden;
+}
+
+/*
+#respond { margin-bottom: 20px; }
+
+#commentform {
+    font-size: 1.5em;
+    line-height: 1.5em;
+}
+
+#comments h2 {
+    font-size: 18px;
+}
+
+#commentform .form-allowed-tags {
+    font-size: 0.8em;
+    line-height: 1.5em;
+}
+
+#commentform .form-submit {
+    padding: 10px 0;
+}
+
+.comment-list .comment-body p {
+    font-size: 10pt;
+}*/

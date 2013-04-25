@@ -272,8 +272,6 @@ dl#comment_list { border-top: 1px dotted #bbb; }
 	.login_alert p { font-weight: bold; }
 		.login_alert p a:hover { text-decoration: underline; }
 .comment_moderated { font-weight: bold; }
-#commentform { border-top: 1px dotted #bbb; }
-	#commentform p { margin-bottom: 1em; }
 		#commentform p a { text-decoration: underline; }
 		#commentform p a:hover { text-decoration: none; }
 		#commentform p .required { color: #d00; }
