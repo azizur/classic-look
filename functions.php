@@ -1,8 +1,10 @@
 <?php
 
+$prom_theme = wp_get_theme();
+
 // add Productive Muslim Styles
 function prom_styles() {
-    $_theme = wp_get_theme();
+    global $prom_theme;
     
     $styles = array(
         'core.css',
@@ -22,7 +24,7 @@ function prom_styles() {
         $handle = 'prom-' . str_replace('.css', '', $style);
         $src = esc_url_raw( $style_url );
         $deps = array();
-        $ver = $_theme->Version;
+        $ver = $prom_theme->Version;
         $media = 'all';
         
         wp_enqueue_style($handle, $src, $deps, $ver, $media );
@@ -33,17 +35,23 @@ add_action( 'wp_enqueue_scripts', 'prom_styles' );
 
 // add Productive Muslim scripts
 function prom_scripts() {
+    global $prom_theme;
+    
     $scripts = array(
-        'q2w3-fixed-widget.js',
+        array('q2w3-fixed-widget.js', array('jquery')),
+        array('abalytics.js', array()),
+        array('multivariate-tests.js', array()),
     );
     
     foreach($scripts as $script) {
-        $style_url = get_stylesheet_directory_uri() . '/js/' . $script;
         
-        $handle = 'prom-' . str_replace('.js', '', $script);
+        list($js,$deps) = $script;
+        
+        $style_url = get_stylesheet_directory_uri() . '/js/' . $js;
+        
+        $handle = 'prom-' . str_replace('.js', '', $js);
         $src = esc_url_raw( $style_url );
-        $deps = array('jquery');
-        $ver = '0.0.1';
+        $ver = $prom_theme->Version;
         $in_footer = true;
         
         wp_enqueue_script($handle, $src, $deps, $ver, $in_footer);
