@@ -358,3 +358,12 @@ function prom_enqueue_comments_reply() {
 }
     
 add_action( 'comment_form_before', 'prom_enqueue_comments_reply' );
+
+
+if(!method_exists('Walker_Comment', 'html5_comment')) {
+    // hack until we upgrade to WordPress 3.6
+    function prom_get_comment_text( $comment ) {
+        return sprintf('<div class="comment-content">%s</div>', $comment);
+    }
+    add_filter('get_comment_text','prom_get_comment_text');
+}

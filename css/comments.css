@@ -115,6 +115,7 @@
     width:         calc(100% - 124px);
     overflow: hidden;
     display: block;
+    font-size: 13px;
 }
 
 .comment-meta,
