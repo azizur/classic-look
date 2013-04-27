@@ -57,7 +57,6 @@ var ABalytics = {
             
             var change = this.changes[i];
             var elements = document.getElementsByClassName ? document.getElementsByClassName(change[0]) : this.getElementsByClassName(change[0]);
-            console.log(change);
             for (var j=0;j<elements.length;j++) elements[j].innerHTML = change[1];
         }
     },
