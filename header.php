@@ -14,7 +14,7 @@
     <body class="custom">
         <div id="header_area" class="full_width">
             <div class="page">
-                <?php render_top_navigation_menu(); ?>
+                <?php render_prom_top_navigation_menu(); ?>
 
                 <form method="get" class="search_form_image_button" action="<?php bloginfo('url'); ?>">
                     <p><input class="text_input" type="text" name="s" id="s" placeholder="Search site" /></p>
@@ -77,7 +77,7 @@
                                                         </div><!-- header-container -->
 
                                                         <div id="header">
-                                                            <? render_primary_navigation_menu(); ?>
+                                                            <? render_prom_primary_navigation_menu(); ?>
                                                         </div>
                                                         </div>
                                                         </div>

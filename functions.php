@@ -72,15 +72,15 @@ function get_image_uri($image) {
     return get_stylesheet_directory_uri().'/img/'. $image;
 }
 
-function render_top_navigation_menu() {
+function render_prom_top_navigation_menu() {
     $config = array(
         'theme_location'  => 'top-menu',
         'menu'            => 'top-menu',
         'container'       => 'div',
-        'container_class' => 'menu-top-menu-container',
+        'container_class' => 'top-menu-container',
         'container_id'    => '',
         'menu_class'      => 'menu',
-        'menu_id'         => 'menu-top-menu',
+        'menu_id'         => 'header-top-menu',
         'echo'            => true,
         //'fallback_cb'     => 'wp_page_menu',
         'before'          => '',
@@ -95,15 +95,38 @@ function render_top_navigation_menu() {
 }
 
 
-function render_primary_navigation_menu() {
+function render_prom_primary_navigation_menu() {
     $config = array(
         'theme_location'  => 'primary-menu',
         'menu'            => 'primary-menu',
         'container'       => 'div',
-        'container_class' => 'menu-primary-menu-container',
+        'container_class' => 'primary-menu-container',
         'container_id'    => '',
         'menu_class'      => 'menu',
-        'menu_id'         => 'menu-primary-menu',
+        'menu_id'         => 'header-primary-menu',
+        'echo'            => true,
+        //'fallback_cb'     => 'wp_page_menu',
+        'before'          => '',
+        'after'           => '',
+        'link_before'     => '',
+        'link_after'      => '',
+        'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+        'depth'           => 0,
+        //'walker'          => ''
+    );
+    wp_nav_menu( $config );
+}
+
+
+function render_prom_footer_copyright_navigation_menu() {
+    $config = array(
+        'theme_location'  => 'copyright-menu',
+        'menu'            => 'copyright-menu',
+        'container'       => 'nav',
+        'container_class' => 'copyright-menu-container',
+        'container_id'    => 'nav-copyright-menu',
+        'menu_class'      => 'menu-inline',
+        'menu_id'         => 'copyright-menu',
         'echo'            => true,
         //'fallback_cb'     => 'wp_page_menu',
         'before'          => '',
@@ -180,6 +203,7 @@ function prom_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menu( 'primary', 'Navigation Menu' );
 	register_nav_menu( 'top-menu', 'Top Menu' );
+	register_nav_menu( 'copyright-menu', 'Footer Copyright Menu' );
 
 	/*
 	 * This theme uses a custom image size for featured images, displayed on
