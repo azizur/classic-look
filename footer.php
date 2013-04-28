@@ -85,15 +85,5 @@
 <![endif]-->
 
 <?php wp_footer(); ?>
-<script type="text/javascript">
-    jQuery(document).ready(
-            function() {
-                var q2w3_sidebar_options = {"sidebar": "q2w3_default", "margin_top": 10, "margin_bottom": 0, "widgets": ['text-9']};
-                setInterval(function() {
-                    q2w3_sidebar(q2w3_sidebar_options);
-                }, 1000);
-            }
-    );
-</script>
 </body>
 </html>

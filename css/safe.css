@@ -276,3 +276,41 @@ nav.navigation .nav-links{
     padding: 0 4px;
     margin: 0;
 }
+
+div.sharedaddy {
+    display: block;
+    position: absolute;
+    top: 100px;
+    background: #fff;
+    padding: 10px;
+    border: 1px solid #ccc;
+    left: -50px;
+    z-index: 9999;
+    border-radius: 3px !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+div.sharedaddy div.sd-block {
+    border: none;
+    margin:0;
+}
+
+div.sharedaddy h3 {
+    display: none;
+}
+div.sharedaddy .sd-content {
+    float: none;
+    width: 100%;
+}
+
+div.sharedaddy .sd-content li {
+    display: block;
+    clear: both;
+}
+
+div.sharedaddy .sharing-hidden .inner {
+    margin-left: 40px;
+    bottom: 0;
+    top: 0 !important;
+    overflow: visible;
+}

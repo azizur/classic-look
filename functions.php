@@ -38,7 +38,7 @@ function prom_scripts() {
     global $prom_theme;
     
     $scripts = array(
-        array('q2w3-fixed-widget.js', array('jquery')),
+        array('core.js', array('jquery')),
         array('abalytics.js', array()),
         array('multivariate-tests.js', array()),
     );

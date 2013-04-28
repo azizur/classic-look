@@ -25,10 +25,6 @@ in the User's Guide:
 	http://diythemes.com/thesis/rtfm/customizing-thesis-with-customcss/
 */
 
-
-
-
-
 /*-----------------------------------------------------------------------------
 
 	COLORS
@@ -39,19 +35,7 @@ in the User's Guide:
 	links, callouts	C66717
 	dimmed bg		f3efec
 
-
-
-
-
 -----------------------------------------------------------------------------*/
-
-
-
-
-
-
-
-
 
 /*-----------------------------------------------------------------------------*/
 /*-------------------------- css reset ----------------------------------------*/
@@ -71,12 +55,6 @@ in the User's Guide:
 	blockquote, q 		{ quotes: "" ""; }
 	/* css reset */
 	
-
-
-
-
-
-
 /*-----------------------------------------------------------------------------*/
 /*------------------------- font sizes ----------------------------------------*/
 /*-----------------------------------------------------------------------------*/
@@ -127,11 +105,6 @@ in the User's Guide:
 		font-size:140%;
 	}
 	
-	/* 16px */
-/*	{
-		font-size:160%;
-	}*/
-
 	/* 16px --> 14px */
 	.custom .to_comments {
 		font-size:87.5%;
@@ -157,11 +130,6 @@ in the User's Guide:
 		*font-size:26px;
 		line-height:normal;
 	}
-
-
-
-
-
 
 /*-----------------------------------------------------------------------------*/
 /*------------------------- element resets ------------------------------------*/
@@ -249,11 +217,6 @@ in the User's Guide:
 		width:180px;
 	}
 
-
-
-
-
-
 /*-----------------------------------------------------------------------------*/
 /*------------------------- shared elements -----------------------------------*/
 /*-----------------------------------------------------------------------------*/
@@ -261,7 +224,6 @@ in the User's Guide:
 		font:normal 10px "Trebuchet MS", Tahoma, arial, helvetica, sans-serif;
 	}
 	
-
 /* ---- title headers ---- */
 	.custom #feature_box b.featurePostHeader, .custom h3 {
 		padding:3px 10px;
@@ -275,7 +237,6 @@ in the User's Guide:
 	
 	.custom #twitter-1 h3 { background-image: url("/images/sidebar-twitter-icon.png"); background-repeat: no-repeat; background-position: 2px 2px; padding-left: 28px; }
 	.custom a.twitter_title_link { color:#e1d1c4; }
-	
 	
 	
 /* ---- title backgrounds ---- */
@@ -355,11 +316,6 @@ in the User's Guide:
 	.custom strong { font-weight:bold; }
 	.custom em { font-style:italic; }
 	.custom abbr, .custom acronym { letter-spacing:0; }
-
-
-
-
-
 
 /*-----------------------------------------------------------------------------*/
 /*-------------------------- header area --------------------------------------*/
@@ -456,11 +412,6 @@ in the User's Guide:
 
 	.custom a#tagline a { border:1px solid red; }
 
-
-
-
-
-
 /*-----------------------------------------------------------------------------*/
 /*-------------------------- menu ---------------------------------------------*/
 /*-----------------------------------------------------------------------------*/
@@ -485,12 +436,6 @@ in the User's Guide:
 	
 /* ---- main menu ---- */
 	.custom #header .menu { margin:20px 0 0; }
-
-
-
-
-
-
 
 /*-----------------------------------------------------------------------------*/
 /*-------------------------- content area -------------------------------------*/
@@ -570,9 +515,7 @@ in the User's Guide:
 	border: 1px solid #DDDDDD;
 	padding:10px;
 	border-radius:4px;
-	overflow:hidden;
 	background: #ffffff; /* Old browsers */
-	background: #feffff; /* Old browsers */
 	background: -moz-linear-gradient(top,  #feffff 40%, #f3efec 100%); /* FF3.6+ */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(40%,#feffff), color-stop(100%,#f3efec)); /* Chrome,Safari4+ */
 	background: -webkit-linear-gradient(top,  #feffff 40%,#f3efec 100%); /* Chrome10+,Safari5.1+ */
@@ -597,37 +540,37 @@ in the User's Guide:
 	.custom .to_comments { position:absolute; bottom:10px; right:0; margin:0; background-position:left -594px; padding:0 0 0 20px; }
 	
 	.custom a.more-link { 
-		/* ---- float:left; ---- */
-		/* ---- background: none repeat scroll 0 0 #3B2313; ---- */ 
-		/* ---- color: #E1D1C4; ---- */
-		/* ---- -moz-border-radius: 4px 4px 4px 4px; ---- */
-		/* ---- padding: 0 5px; ---- */
-	width: auto;
-	height: 20px !important;
-	cursor: pointer;
-	padding:4px 10px 4px 10px;
-	margin:0px;
-	color: #FFFFFF;
-	font-family: "Trebuchet MS", Tahoma, arial, helvetica, sans-serif;
-	font-size: 12px;
-	border-radius: 4px;
-	text-decoration:none;
-	float:right;
-	background: #88502b; /* Old browsers */
-	background: -moz-linear-gradient(top,  #88502b 0%, #ec9939 0%, #c66717 100%, #c66717 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#88502b), color-stop(0%,#ec9939), color-stop(100%,#c66717), color-stop(100%,#c66717)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top,  #88502b 0%,#ec9939 0%,#c66717 100%,#c66717 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top,  #88502b 0%,#ec9939 0%,#c66717 100%,#c66717 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top,  #88502b 0%,#ec9939 0%,#c66717 100%,#c66717 100%); /* IE10+ */
-	background: linear-gradient(top,  #88502b 0%,#ec9939 0%,#c66717 100%,#c66717 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ec9939', endColorstr='#c66717',GradientType=0 ); /* IE6-9 */
+            /* ---- float:left; ---- */
+            /* ---- background: none repeat scroll 0 0 #3B2313; ---- */ 
+            /* ---- color: #E1D1C4; ---- */
+            /* ---- -moz-border-radius: 4px 4px 4px 4px; ---- */
+            /* ---- padding: 0 5px; ---- */
+            width: auto;
+            height: 20px !important;
+            cursor: pointer;
+            padding:4px 10px 4px 10px;
+            margin:0px;
+            color: #FFFFFF;
+            font-family: "Trebuchet MS", Tahoma, arial, helvetica, sans-serif;
+            font-size: 12px;
+            border-radius: 4px;
+            text-decoration:none;
+            float:right;
+            background: #88502b; /* Old browsers */
+            background: -moz-linear-gradient(top,  #88502b 0%, #ec9939 0%, #c66717 100%, #c66717 100%); /* FF3.6+ */
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#88502b), color-stop(0%,#ec9939), color-stop(100%,#c66717), color-stop(100%,#c66717)); /* Chrome,Safari4+ */
+            background: -webkit-linear-gradient(top,  #88502b 0%,#ec9939 0%,#c66717 100%,#c66717 100%); /* Chrome10+,Safari5.1+ */
+            background: -o-linear-gradient(top,  #88502b 0%,#ec9939 0%,#c66717 100%,#c66717 100%); /* Opera 11.10+ */
+            background: -ms-linear-gradient(top,  #88502b 0%,#ec9939 0%,#c66717 100%,#c66717 100%); /* IE10+ */
+            background: linear-gradient(top,  #88502b 0%,#ec9939 0%,#c66717 100%,#c66717 100%); /* W3C */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ec9939', endColorstr='#c66717',GradientType=0 ); /* IE6-9 */
 	}
 
 .custom a.more-link:hover {
 	background: none repeat scroll 0 0 #C66717 !important;
 	color: #FFFFFF;
 	cursor: pointer;
-}
+    }
 	
 	.custom .prev_next { padding:10px 0 0; border:0; }
 	
@@ -673,20 +616,11 @@ in the User's Guide:
 /*-----------------------------------------------------------------------------*/
 /*------------------------- sidebar 1 -----------------------------------------*/
 /*-----------------------------------------------------------------------------*/
-	.custom li.widget_tubepress { margin-bottom:0; }
-	.custom .tubepress_thumb { line-height:120%; }
-	.custom .tubepress_thumbnail_area { margin-top:0; }
-	.custom .tubepress_meta { text-align:center;float:none; }
-	.custom .tubepress_thumb img { width:160px !important;height:130px !important;}
-
-
-
-
-
-
-
-
-
+.custom li.widget_tubepress { margin-bottom:0; }
+.custom .tubepress_thumb { line-height:120%; }
+.custom .tubepress_thumbnail_area { margin-top:0; }
+.custom .tubepress_meta { text-align:center;float:none; }
+.custom .tubepress_thumb img { width:160px !important;height:130px !important;}
 
 /*-----------------------------------------------------------------------------*/
 /*------------------------- sidebar 2 -----------------------------------------*/
@@ -778,8 +712,6 @@ in the User's Guide:
 
 	.custom ul.twitter { padding-top:4px; }
 
-
-
 /*-----------------------------------------------------------------------------*/
 /*------------------------- prefoot -------------------------------------------*/
 /*-----------------------------------------------------------------------------*/
@@ -837,9 +769,6 @@ in the User's Guide:
 	.custom #footerEnd li { float:left; padding-left: 5px; }
 	.custom .projects p.copyrightInfo { position:absolute;bottom:10px;left:0; }
 
-
-
-
 /*-----------------------------------------------------------------------------*/
 /*------------------------- hide text -----------------------------------------*/
 /*-----------------------------------------------------------------------------*/
@@ -856,10 +785,6 @@ in the User's Guide:
 				*font-size:0;
 			}
 
-
-
-
-
 /*-----------------------------------------------------------------------------*/
 /*------------------------- ie6 display ---------------------------------------*/
 /*-----------------------------------------------------------------------------*/
@@ -867,12 +792,6 @@ in the User's Guide:
 	.custom #feature_box ul.sidebar_list li ul li {
 		_display:inline;
 	}
-
-
-
-
-
-
 
 /*-----------------------------------------------------------------------------*/
 /*-------------------------- clearfix -----------------------------------------*/
@@ -909,14 +828,9 @@ in the User's Guide:
 			*display: inline-block;
 			}
 
-
-
-
-
 /*-----------------------------------------------------------------------------*/
 /*------------------------- countdown page ------------------------------------*/
 /*-----------------------------------------------------------------------------*/
-
 
 	.custom.eid-mubarak #header_area,
 		.custom.eid-mubarak #content,
@@ -950,7 +864,6 @@ in the User's Guide:
 	}
 	
 	.custom.eid-mubarak #mc_embed_signup { float: left; margin-right: 20px; }
-	
 	
 /*-----------------------------------------------------------------------------*/
 /*------------------------- breadcrumbs    ------------------------------------*/
@@ -1260,6 +1173,5 @@ hr {
 
 /* Page Navigation - Hamzah*/
 .post_box, .teasers_box, .full_width #content_box .page {
-margin: 1px;
+    margin: 1px;
 }
-
