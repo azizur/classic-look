@@ -220,7 +220,9 @@ function prom_setup() {
 	add_filter( 'use_default_gallery_style', '__return_false' );
         
         // This theme uses html5 search form
-        //add_filter( 'search_form_format', function() { return 'html5';} );
+//        if(has_filter('search_form_format')) {
+//            add_filter( 'search_form_format', function() { return 'html5';} );
+//        }
 }
 add_action( 'after_setup_theme', 'prom_setup' );
 
