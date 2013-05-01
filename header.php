@@ -3,8 +3,6 @@
     <head profile="http://gmpg.org/xfn/11">
         <meta charset="<?php bloginfo('charset'); ?>" />
         <title><?php wp_title(' - ', true, 'right'); ?></title>
-        <meta name="description" content="A website dedicated to Islam &#038; Productivity. Our vision is to revive Productivity in our Ummah through lessons extracted from the Quran, Seerah, history of the Islamic Civilization, and in collating tips and tools to equip you with a productive lifestyle!" />
-        <meta name="keywords" content="Productive Muslim, ProductiveMuslim, Islam, Productivity, Productive Lifestyle" />
         <!--[if lte IE 8]><link rel="stylesheet" href="ie.css" type="text/css" media="screen, projection" /><![endif]-->
         <link rel="alternate" type="application/rss+xml" title="Productive Muslim RSS Feed" href="http://feeds.feedburner.com/ProductiveMuslim" />
         <link rel="profile" href="http://gmpg.org/xfn/11" />

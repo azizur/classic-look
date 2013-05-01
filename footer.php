@@ -31,7 +31,8 @@
                 </div><!-- #third .preFootn-area -->
                 <div class="preFootn" id="fourth">
                     <!-- OptinSkin -->
-                    <div class="ois_wrapper " data="4"data-popup-scroll="100px"style="" id="ois_4" rel="homepage"><div class="footerwidget">
+                    <div class="ois_wrapper " data="4" data-popup-scroll="100px" id="ois_4" rel="homepage">
+                        <div class="footerwidget">
                             <form action="http://www.aweber.com/scripts/addlead.pl" method="post" id="ois_1_form">
 
                                 <input type="hidden" name="meta_web_form_id" value="1295039521" />
@@ -45,8 +46,7 @@
                                 <input type="hidden" name="meta_required" value="email" />
                                 <input type="hidden" name="meta_tooltip" value="" />
 
-                                Subscribe to our e-PRO newsletter for exclusive productivity content:
-                                <br /><br />
+                                <p>Subscribe to our e-PRO newsletter for exclusive productivity content:</p>
                                 <div align="center">
                                     <input type="text" name="name" class="inputemail" placeholder="Full Name" value=""><br />
                                     <input id="awf_field-36046023" type="text" name="email" value="" class="inputemail" placeholder="Email Address"  />
@@ -56,7 +56,8 @@
                                     <img src="http://forms.aweber.com/form/ci/?tc=ffffff&bg=c66617&d=TMyszByMbD6C6qZGpk4%2BzKycHMzsLKw%3D" alt="Subscriber Counter" />
                                 </div>
                             </form>
-                        </div></div>
+                        </div>
+                    </div>
                     <!-- End OptinSkin -->
 
                 </div><!-- #fourth .preFootn-area -->
