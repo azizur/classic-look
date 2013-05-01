@@ -37,7 +37,7 @@
                     <div class="header-container-right">
 
                         <!-- OptinSkin -->
-                        <div class="ois_wrapper " data="1"data-popup-scroll="100px"style="" id="ois_1" rel="homepage">
+                        <div class="ois_wrapper" data="1" data-popup-scroll="100px" id="ois_1" rel="homepage">
                             <div class="topnewsletter-container">
                                 <div class="topnewsletter-container-left">
                                     <div class="topnewsletter-container-left-title">
