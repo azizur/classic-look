@@ -37,12 +37,21 @@
 	<?php endif; ?>
 
 	<footer class="entry-meta">
-		<?php if ( comments_open() && ! is_single() ) : ?>
-			<div class="comments-link">
-				<?php comments_popup_link( '<span class="leave-reply">' . __( 'Leave a comment', 'twentythirteen' ) . '</span>', __( 'One comment so far', 'twentythirteen' ), __( 'View all % comments', 'twentythirteen' ) ); ?>
-			</div><!-- .comments-link -->
-		<?php endif; // comments_open() ?>
+            
+            <?php
+            // Translators: used between list items, there is a space after the comma.
+            $categories_list = get_the_category_list( __( ', ', 'twentythirteen' ) );
+            if ( $categories_list ) {
+                    echo '<span class="categories-links">' . $categories_list . '</span>';
+            }
 
+            // Translators: used between list items, there is a space after the comma.
+            $tag_list = get_the_tag_list( '', __( ', ', 'twentythirteen' ) );
+            if ( $tag_list ) {
+                    echo '<span class="tags-links">' . $tag_list . '</span>';
+            }
+            ?>
+		
 		<?php if ( is_single() && get_the_author_meta( 'description' ) && is_multi_author() ) : ?>
 			<?php get_template_part( 'author-bio' ); ?>
 		<?php endif; ?>

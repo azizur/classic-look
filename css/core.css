@@ -43,7 +43,6 @@ body { font-size: 10px; }
 		.teaser_right { float: right; }
 	.top { border: none; }
 		#sidebars { border-color: #ddd; }
-			#sidebar_1 { border-color: #ddd; }
 #footer { border-style: double; border-color: #ddd; text-align: right; clear: both; }
 
 /*---:[ global elements ]:---*/

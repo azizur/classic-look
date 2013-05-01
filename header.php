@@ -14,11 +14,12 @@
     <body class="custom">
         <div id="header_area" class="full_width">
             <div class="page">
+                <div id="access">
                 <?php render_prom_top_navigation_menu(); ?>
-
-                <form method="get" class="search_form_image_button" action="<?php bloginfo('url'); ?>">
-                    <p><input class="text_input" type="text" name="s" id="s" placeholder="Search site" /></p>
-                </form>
+                    
+                <?php get_search_form( true ); ?> 
+                    
+                </div>
 
                 <div class="header-container">
                     <div class="header-container-left">

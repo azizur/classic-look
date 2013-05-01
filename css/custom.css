@@ -1,42 +1,3 @@
-/*
-File:			custom.css
-Description:	Custom styles for Thesis
-
-BASIC USAGE:
-
-If you have enabled the custom stylesheet in the Thesis options panel, the <body> tag 
-will be appended with the "custom" class, like so: <body class="custom">. You can use 
-the "custom" class to override *any* CSS declarations contained in the style.css file.
--moz-border-radius: 4px 4px 4px 4px;
-For example, if you wish to change the default link color to green, you would add the 
-following declarations to this file:
-
-	.custom a, .custom a:visited { color: #090; }	<--- This makes links green
-	.custom a:hover { color: #00f; }	<--- This makes links blue when you mouse over them
-
-WHY THIS WORKS:
-
-By using the "custom" class, you are creating more specific CSS declarations for HTML
-elements. CSS styling is applied through rules of specificity, and because declarations
-prepended with .custom are more specific, they get applied when the page is rendered!
-
-More information about styling your Thesis installation using this file can be found
-in the User's Guide:
-	http://diythemes.com/thesis/rtfm/customizing-thesis-with-customcss/
-*/
-
-/*-----------------------------------------------------------------------------
-
-	COLORS
-	dimmed titles	e1d1c4
-	main menu		ffffff
-	header bg		3B2313
-	text
-	links, callouts	C66717
-	dimmed bg		f3efec
-
------------------------------------------------------------------------------*/
-
 /*-----------------------------------------------------------------------------*/
 /*-------------------------- css reset ----------------------------------------*/
 /*-----------------------------------------------------------------------------*/
@@ -135,12 +96,13 @@ in the User's Guide:
 /*------------------------- element resets ------------------------------------*/
 /*-----------------------------------------------------------------------------*/	
 	.custom .page {
-		width:980px;
+		width:960px;
 	}
 	
 	.custom #content {
 		width:640px;
 		margin:0;
+                float: left;
 	}
 	
 	.custom #content_box { background:none; }
@@ -177,37 +139,7 @@ in the User's Guide:
 	.custom #text-7 a { font-size: 180%; }
 	
 	.topArticles li a { width:120px !important;}
-/* ---- padding reset ---- */
-	.custom .full_width .page,
-	.custom #header,
-	.custom #footer,
-	.custom #feature_box,
-	.custom #sidebar_1 ul.sidebar_list,
-	.custom #sidebar_2 ul.sidebar_list,
-	.custom .sidebar ul.sidebar_list,
-	.sidebar ul.sidebar_list,
-	.custom .sidebar_list,
-	.custom .post_box .entry-content,
-	.custom .tubepress_thumbnail_area,
-	.custom .tubepress_thumbs {
-		padding:0 !important;
-	}
 
-/* ---- margin reset ---- */
-	.custom #header,
-	.custom #footer,
-	.custom #sidebar_1 ul.sidebar_list,
-	.custom #sidebar_2 ul.sidebar_list,
-	.custom .sidebar h3,
-	.custom .teasers_box,
-	.custom .full_width #content_box .page,
-	.custom .headline_area,
-	.custom h1#tagline,
-	.custom a#tagline,
-	.custom .post_box .entry-content {
-		margin:0 !important;
-	}
-	
 	.custom li.last { margin-right:0 !important;padding-right:0 !important;border-bottom:0 !important; }
 	
 
@@ -329,60 +261,6 @@ in the User's Guide:
 
 	.custom #header { border:0; padding:5px 0; }
 
-/* ---- search field ---- */
-
-	.custom form.search_form_image_button { 
-		font:normal 10px "Trebuchet MS", Tahoma, arial, helvetica, sans-serif;
-		position:absolute;
-		top:0px;
-		right:0px;
-		width:190px;
-		z-index:10000;
-		height: 24px;
-		padding-top: 5px;
-		padding-right: 14px;
-		margin-top: -5px;
-		margin-bottom: -3px;
-	}
-.custom form.search_form_image_button input { 
-	color: #E1D1C4;
-	font-size: 12px;
-	height: 17px;
-	width:160px;
-	padding: 2px 20px 2px 2px;
-	border-radius: 4px;
-	background-color:#88502B;
-	background-image:url("../img/search-button.png");
-	background-repeat:no-repeat;
-	background-position: 99% 1px;
-	border:none;
-	font-family: "Trebuchet MS", Tahoma, arial, helvetica, sans-serif;
-	float:right;
-	margin:0px 4px 0px 0px;
-	}
-	.custom form.search_form_image_button{
-		height:22px;
-		width:190px;
-		border:0;
-		padding:5px 0px;
-	}
-	
-	.custom form.search_form_image_button #s{
-		margin-top:3px;
-		height:16px;
-		width:160px;
-		color: #E1D1C4;
-	}
-
-	.custom input#searchsubmit.my-search-image {
-		background:url("../img/search-button.png") no-repeat 50% 50%;
-		cursor:pointer;
-   		border:none;
-		height:17px;
-		width:24px;
-        
-	}
-	
 	.custom h1#tagline,
 	.custom a#tagline,
 	.custom #countdown-logo {
@@ -526,14 +404,9 @@ in the User's Guide:
 	position:relative;
 	margin:0 0 20px 0px;
 }
-.post_box, .teasers_box, .full_width #content_box .page {
-    margin: 0;
-}
 	.custom .post_box .entry-content {  }
 	
 	.custom .post h2 a, .custom .to_comments { color:#C66717; }
-	
-	.custom .headline_area { margin:10px 0; }
 	
 	.custom h3.postSectionTitle { clear:both; }
 
@@ -1169,9 +1042,4 @@ hr {
 }
 .custom #feature_box ul li {
     height: 300px !important;
-}
-
-/* Page Navigation - Hamzah*/
-.post_box, .teasers_box, .full_width #content_box .page {
-    margin: 1px;
 }

@@ -11,7 +11,8 @@ function prom_styles() {
         'layout.css',
         //'ie.css',
         'custom.css',
-        'safe.css'
+        'safe.css',
+        'genericons.css'
     );
     
     if(is_single()) {
@@ -217,6 +218,9 @@ function prom_setup() {
 
 	// This theme uses its own gallery styles.
 	add_filter( 'use_default_gallery_style', '__return_false' );
+        
+        // This theme uses html5 search form
+        //add_filter( 'search_form_format', function() { return 'html5';} );
 }
 add_action( 'after_setup_theme', 'prom_setup' );
 
@@ -229,23 +233,13 @@ add_action( 'after_setup_theme', 'prom_setup' );
  * @return void
  */
 function prom_entry_meta() {
+    
+    
 	if ( is_sticky() && is_home() && ! is_paged() )
 		echo '<span class="featured-post">' . __( 'Sticky', 'twentythirteen' ) . '</span>';
 
 	if ( ! has_post_format( 'aside' ) && ! has_post_format( 'link' ) && 'post' == get_post_type() )
 		prom_entry_date();
-
-	// Translators: used between list items, there is a space after the comma.
-	$categories_list = get_the_category_list( __( ', ', 'twentythirteen' ) );
-	if ( $categories_list ) {
-		echo '<span class="categories-links">' . $categories_list . '</span>';
-	}
-
-	// Translators: used between list items, there is a space after the comma.
-	$tag_list = get_the_tag_list( '', __( ', ', 'twentythirteen' ) );
-	if ( $tag_list ) {
-		echo '<span class="tags-links">' . $tag_list . '</span>';
-	}
 
 	// Post author
 	if ( 'post' == get_post_type() ) {
@@ -255,6 +249,13 @@ function prom_entry_meta() {
 			get_the_author()
 		);
 	}
+        
+        if ( comments_open() && ! is_single() ) {
+            echo '<span class="comments-link">';
+                comments_popup_link( '<span class="leave-reply">' . __( 'Leave a comment', 'twentythirteen' ) . '</span>', __( 'One comment so far', 'twentythirteen' ), __( 'View all % comments', 'twentythirteen' ) );
+            echo '</span>';
+	} // comments_open()
+        
 }
 
 
