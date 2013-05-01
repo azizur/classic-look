@@ -1,33 +1,38 @@
 <?php
 
-$prom_theme = wp_get_theme();
+global $prom_theme;
+    
+if(!is_a($prom_theme, 'WP_Theme')) {
+    $prom_theme = wp_get_theme();
+}
 
 // add Productive Muslim Styles
 function prom_styles() {
     global $prom_theme;
     
     $styles = array(
-        array('core.css', array()),
-        array('layout.css', array()),
-        //'ie.css',
-        array('custom.css', array()),
-        array('safe.css', array()),
-        array('genericons.css', array())
+        array('css' => 'core.css'),
+        array('css' => 'layout.css'),
+        array('css' => 'ie.css', 'deps'=>array('prom-safe'), 'extra' => array('conditional', 'lte IE 7')),
+        array('css' => 'custom.css'),
+        array('css' => 'genericons.css'),
+        array('css' => 'safe.css', 'deps'=>array('prom-genericons')),
     );
     
     // check if JetPack sharing is enabled if so make it a dependency
-    $jetpack_active_modules = get_option('jetpack_active_modules');
-    if ( $jetpack_active_modules && in_array( 'sharedaddy', $jetpack_active_modules ) ) {
-          // Do something
-        $styles[] = array('safe.css', array('sharedaddy-css'));
+    if ( wp_style_is('sharedaddy') || wp_style_is('sharedaddy', 'registered') ) {
+        $styles[] = array('css' => 'safe.css', 'deps' => array('sharedaddy'));
     }
-
+    
     if(is_single()) {
-        $styles[] = 'comments.css';
+        $styles[] = array('css' => 'comments.css');
     }
     
     foreach($styles as $style) {
-        list($css,$deps) = $style;
+        $css = '';
+        $deps = $extra = array();
+        
+        extract($style, EXTR_OVERWRITE);
         
         $style_url = get_stylesheet_directory_uri() . '/css/' . $css;
         
@@ -37,6 +42,12 @@ function prom_styles() {
         $media = 'all';
         
         wp_enqueue_style($handle, $src, $deps, $ver, $media );
+        
+        if(count($extra)) {
+            global $wp_styles;
+            list($key, $value) = $extra;
+            $wp_styles->add_data( $handle, $key, $value);
+        }
     }
 }
 add_action( 'wp_enqueue_scripts', 'prom_styles' );
@@ -191,46 +202,46 @@ add_filter( 'wp_title', 'prom_wp_title', 10, 2 );
  * @return void
  */
 function prom_setup() {
+    
+    // Adds RSS feed links to <head> for posts and comments.
+    add_theme_support( 'automatic-feed-links' );
 
-	// Adds RSS feed links to <head> for posts and comments.
-	add_theme_support( 'automatic-feed-links' );
+    /*
+     * This theme supports all available post formats.
+     * See http://codex.wordpress.org/Post_Formats
+     *
+     * Structured post formats are formats where Twenty Thirteen handles the
+     * output instead of the default core HTML output.
+     */
+    add_theme_support( 'structured-post-formats', array(
+            'link', 'video'
+    ) );
+    add_theme_support( 'post-formats', array(
+            'aside', 'audio', 'chat', 'gallery', 'image', 'quote', 'status'
+    ) );
 
-	/*
-	 * This theme supports all available post formats.
-	 * See http://codex.wordpress.org/Post_Formats
-	 *
-	 * Structured post formats are formats where Twenty Thirteen handles the
-	 * output instead of the default core HTML output.
-	 */
-	add_theme_support( 'structured-post-formats', array(
-		'link', 'video'
-	) );
-	add_theme_support( 'post-formats', array(
-		'aside', 'audio', 'chat', 'gallery', 'image', 'quote', 'status'
-	) );
+    // This theme uses wp_nav_menu() in one location.
+    register_nav_menu( 'primary', 'Navigation Menu' );
+    register_nav_menu( 'top-menu', 'Top Menu' );
+    register_nav_menu( 'copyright-menu', 'Footer Copyright Menu' );
 
-	// This theme uses wp_nav_menu() in one location.
-	register_nav_menu( 'primary', 'Navigation Menu' );
-	register_nav_menu( 'top-menu', 'Top Menu' );
-	register_nav_menu( 'copyright-menu', 'Footer Copyright Menu' );
+    /*
+     * This theme uses a custom image size for featured images, displayed on
+     * "standard" posts and pages.
+     */
+    add_theme_support( 'post-thumbnails' );
+    set_post_thumbnail_size( 604, 270, true );
 
-	/*
-	 * This theme uses a custom image size for featured images, displayed on
-	 * "standard" posts and pages.
-	 */
-	add_theme_support( 'post-thumbnails' );
-	set_post_thumbnail_size( 604, 270, true );
+    // Register custom image size for image post formats.
+    add_image_size( 'prom-image-post', 724, 1288 );
 
-	// Register custom image size for image post formats.
-	add_image_size( 'prom-image-post', 724, 1288 );
-
-	// This theme uses its own gallery styles.
-	add_filter( 'use_default_gallery_style', '__return_false' );
+    // This theme uses its own gallery styles.
+    add_filter( 'use_default_gallery_style', '__return_false' );
         
-        // This theme uses html5 search form
-//        if(has_filter('search_form_format')) {
-//            add_filter( 'search_form_format', function() { return 'html5';} );
-//        }
+    // This theme uses html5 search form
+//    if(has_filter('search_form_format')) {
+//       add_filter( 'search_form_format', function() { return 'html5';} );
+//    }
 }
 add_action( 'after_setup_theme', 'prom_setup' );
 
