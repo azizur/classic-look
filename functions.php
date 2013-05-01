@@ -7,24 +7,32 @@ function prom_styles() {
     global $prom_theme;
     
     $styles = array(
-        'core.css',
-        'layout.css',
+        array('core.css', array()),
+        array('layout.css', array()),
         //'ie.css',
-        'custom.css',
-        'safe.css',
-        'genericons.css'
+        array('custom.css', array()),
+        array('safe.css', array()),
+        array('genericons.css', array())
     );
     
+    // check if JetPack sharing is enabled if so make it a dependency
+    $jetpack_active_modules = get_option('jetpack_active_modules');
+    if ( $jetpack_active_modules && in_array( 'sharedaddy', $jetpack_active_modules ) ) {
+          // Do something
+        $styles[] = array('safe.css', array('sharing'));
+    }
+
     if(is_single()) {
         $styles[] = 'comments.css';
     }
     
     foreach($styles as $style) {
-        $style_url = get_stylesheet_directory_uri() . '/css/' . $style;
+        list($css,$deps) = $style;
         
-        $handle = 'prom-' . str_replace('.css', '', $style);
+        $style_url = get_stylesheet_directory_uri() . '/css/' . $css;
+        
+        $handle = 'prom-' . str_replace('.css', '', $css);
         $src = esc_url_raw( $style_url );
-        $deps = array();
         $ver = $prom_theme->Version;
         $media = 'all';
         
