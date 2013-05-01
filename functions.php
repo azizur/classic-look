@@ -19,7 +19,7 @@ function prom_styles() {
     $jetpack_active_modules = get_option('jetpack_active_modules');
     if ( $jetpack_active_modules && in_array( 'sharedaddy', $jetpack_active_modules ) ) {
           // Do something
-        $styles[] = array('safe.css', array('sharedaddy'));
+        $styles[] = array('safe.css', array('sharedaddy-css'));
     }
 
     if(is_single()) {
