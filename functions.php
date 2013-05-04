@@ -223,20 +223,20 @@ function prom_setup() {
     // This theme uses wp_nav_menu() in one location.
     register_nav_menu( 'primary', 'Navigation Menu' );
     register_nav_menu( 'top-menu', 'Top Menu' );
-    register_nav_menu( 'copyright-menu', 'Footer Copyright Menu' );
+    register_nav_menu( 'footer-menu', 'Footer Menu' );
 
     /*
      * This theme uses a custom image size for featured images, displayed on
      * "standard" posts and pages.
      */
     add_theme_support( 'post-thumbnails' );
-    set_post_thumbnail_size( 604, 270, true );
+    set_post_thumbnail_size( 640, 270, true );
 
     // Register custom image size for image post formats.
-    add_image_size( 'prom-image-post', 724, 1288 );
+    //add_image_size( 'prom-image-post', 724, 1288 );
 
     // This theme uses its own gallery styles.
-    add_filter( 'use_default_gallery_style', '__return_false' );
+    //add_filter( 'use_default_gallery_style', '__return_false' );
         
     // This theme uses html5 search form
 //    if(has_filter('search_form_format')) {
@@ -413,3 +413,8 @@ if(!method_exists('Walker_Comment', 'html5_comment')) {
     }
     add_filter('get_comment_text','prom_get_comment_text');
 }
+
+function prom_social_share() {
+    return sharing_display();
+}
+add_shortcode('share-on-social-media', 'prom_social_share');
