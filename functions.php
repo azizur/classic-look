@@ -184,7 +184,7 @@ function prom_wp_title( $title, $sep ) {
 
 	// Add a page number if necessary.
 	if ( $paged >= 2 || $page >= 2 )
-		$title = "$title $sep " . sprintf( __( 'Page %s', 'twentythirteen' ), max( $paged, $page ) );
+		$title = "$title $sep " . sprintf( __( 'Page %s', 'productivemuslim' ), max( $paged, $page ) );
 
 	return $title;
 }
@@ -210,12 +210,12 @@ function prom_setup() {
      * This theme supports all available post formats.
      * See http://codex.wordpress.org/Post_Formats
      *
-     * Structured post formats are formats where Twenty Thirteen handles the
+     * Structured post formats are formats where ProductiveMuslim theme handles the
      * output instead of the default core HTML output.
      */
-    add_theme_support( 'structured-post-formats', array(
-            'link', 'video'
-    ) );
+//    add_theme_support( 'structured-post-formats', array(
+//            'link', 'video'
+//    ) );
     add_theme_support( 'post-formats', array(
             'aside', 'audio', 'chat', 'gallery', 'image', 'quote', 'status'
     ) );
@@ -245,19 +245,53 @@ function prom_setup() {
 }
 add_action( 'after_setup_theme', 'prom_setup' );
 
+/**
+ * Registers our main widget area and the front page widget areas.
+ *
+ */
+function prom_widgets_init() {
+	register_sidebar( array(
+		'name' => __( 'Main Sidebar', 'productivemuslim' ),
+		'id' => 'sidebar-1',
+		'description' => __( 'Appears on posts and pages except the optional Front Page template, which has its own widgets', 'productivemuslim' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget' => '</aside>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	) );
+
+	register_sidebar( array(
+		'name' => __( 'First Front Page Widget Area', 'productivemuslim' ),
+		'id' => 'sidebar-2',
+		'description' => __( 'Appears when using the optional Front Page template with a page set as Static Front Page', 'productivemuslim' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget' => '</aside>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	) );
+
+	register_sidebar( array(
+		'name' => __( 'Second Front Page Widget Area', 'productivemuslim' ),
+		'id' => 'sidebar-3',
+		'description' => __( 'Appears when using the optional Front Page template with a page set as Static Front Page', 'productivemuslim' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget' => '</aside>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	) );
+}
+//add_action( 'widgets_init', 'prom_widgets_init' );
+
 
 /**
  * Prints HTML with meta information for current post: categories, tags, permalink, author, and date.
- *
- * Create your own twentythirteen_entry_meta() to override in a child theme.
- *
  * @return void
  */
 function prom_entry_meta() {
     
     
 	if ( is_sticky() && is_home() && ! is_paged() )
-		echo '<span class="featured-post">' . __( 'Sticky', 'twentythirteen' ) . '</span>';
+		echo '<span class="featured-post">' . __( 'Sticky', 'productivemuslim' ) . '</span>';
 
 	if ( ! has_post_format( 'aside' ) && ! has_post_format( 'link' ) && 'post' == get_post_type() )
 		prom_entry_date();
@@ -266,14 +300,14 @@ function prom_entry_meta() {
 	if ( 'post' == get_post_type() ) {
 		printf( '<span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a></span>',
 			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-			esc_attr( sprintf( __( 'View all posts by %s', 'twentythirteen' ), get_the_author() ) ),
+			esc_attr( sprintf( __( 'View all posts by %s', 'productivemuslim' ), get_the_author() ) ),
 			get_the_author()
 		);
 	}
         
         if ( comments_open() && ! is_single() ) {
             echo '<span class="comments-link">';
-                comments_popup_link( '<span class="leave-reply">' . __( 'Leave a comment', 'twentythirteen' ) . '</span>', __( 'One comment so far', 'twentythirteen' ), __( 'View all % comments', 'twentythirteen' ) );
+                comments_popup_link( '<span class="leave-reply">' . __( 'Leave a comment', 'productivemuslim' ) . '</span>', __( 'One comment so far', 'productivemuslim' ), __( 'View all % comments', 'productivemuslim' ) );
             echo '</span>';
 	} // comments_open()
         
@@ -282,20 +316,14 @@ function prom_entry_meta() {
 
 /**
  * Prints HTML with date information for current post.
- *
- * Create your own twentythirteen_entry_date() to override in a child theme.
- *
- * @since Twenty Thirteen 1.0
- *
- * @param boolean $echo Whether to echo the date. Default true.
  * @return string
  */
 function prom_entry_date( $echo = true ) {
-	$format_prefix = ( has_post_format( 'chat' ) || has_post_format( 'status' ) ) ? _x( '%1$s on %2$s', '1: post format name. 2: date', 'twentythirteen' ): '%2$s';
+	$format_prefix = ( has_post_format( 'chat' ) || has_post_format( 'status' ) ) ? _x( '%1$s on %2$s', '1: post format name. 2: date', 'productivemuslim' ): '%2$s';
 
 	$date = sprintf( '<span class="date"><a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a></span>',
 		esc_url( get_permalink() ),
-		esc_attr( sprintf( __( 'Permalink to %s', 'twentythirteen' ), the_title_attribute( 'echo=0' ) ) ),
+		esc_attr( sprintf( __( 'Permalink to %s', 'productivemuslim' ), the_title_attribute( 'echo=0' ) ) ),
 		esc_attr( get_the_date( 'c' ) ),
 		esc_html( sprintf( $format_prefix, get_post_format_string( get_post_format() ), get_the_date() ) )
 	);
@@ -309,9 +337,6 @@ function prom_entry_date( $echo = true ) {
 
 /**
  * Displays navigation to next/previous set of posts when applicable.
- *
- * @since Twenty Thirteen 1.0
- *
  * @return void
  */
 function prom_paging_nav() {
@@ -322,15 +347,15 @@ function prom_paging_nav() {
 		return;
 	?>
 	<nav class="navigation paging-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'twentythirteen' ); ?></h1>
+		<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'productivemuslim' ); ?></h1>
 		<div class="nav-links">
 
 			<?php if ( get_next_posts_link() ) : ?>
-			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> <span class="meta-title">Older posts</span>', 'twentythirteen' ) ); ?></div>
+			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> <span class="meta-title">Older posts</span>', 'productivemuslim' ) ); ?></div>
 			<?php endif; ?>
 
 			<?php if ( get_previous_posts_link() ) : ?>
-			<div class="nav-next"><?php previous_posts_link( __( '<span class="meta-title">Newer posts</span> <span class="meta-nav">&rarr;</span>', 'twentythirteen' ) ); ?></div>
+			<div class="nav-next"><?php previous_posts_link( __( '<span class="meta-title">Newer posts</span> <span class="meta-nav">&rarr;</span>', 'productivemuslim' ) ); ?></div>
 			<?php endif; ?>
 
 		</div><!-- .nav-links -->
@@ -347,7 +372,6 @@ function prom_paging_nav() {
 
 /**
  * Displays navigation to next/previous post when applicable.
- *
  * @return void
  */
 function prom_post_nav() {
@@ -361,18 +385,18 @@ function prom_post_nav() {
             return;
     ?>
     <nav class="navigation post-navigation" role="navigation">
-            <h1 class="screen-reader-text"><?php _e( 'Post navigation', 'twentythirteen' ); ?></h1>
+            <h1 class="screen-reader-text"><?php _e( 'Post navigation', 'productivemuslim' ); ?></h1>
             <div class="nav-links">
                 
                 <?php if ( $previous ) : ?>
                 <div class="nav-previous">
-                    <?php previous_post_link( '%link', _x( '<span class="meta-nav">&larr;</span> <span class="meta-title">%title</span>', 'Previous post link', 'twentythirteen' ) ); ?>
+                    <?php previous_post_link( '%link', _x( '<span class="meta-nav">&larr;</span> <span class="meta-title">%title</span>', 'Previous post link', 'productivemuslim' ) ); ?>
                 </div>
                 <?php endif; ?>
                 
                 <?php if ( $next ) : ?>
                 <div class="nav-next">
-                    <?php next_post_link( '%link', _x( '<span class="meta-title">%title</span> <span class="meta-nav">&rarr;</span>', 'Next post link', 'twentythirteen' ) ); ?>
+                    <?php next_post_link( '%link', _x( '<span class="meta-title">%title</span> <span class="meta-nav">&rarr;</span>', 'Next post link', 'productivemuslim' ) ); ?>
                 </div>
                 <?php endif; ?>
 

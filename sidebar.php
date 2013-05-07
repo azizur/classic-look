@@ -1,12 +1,27 @@
+<?php
+/**
+ * The sidebar containing the main widget area.
+ *
+ * If no active widgets in sidebar, let's hide it completely.
+ */
+?>
 <div id="sidebars">
+    
+    <?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
+    <div id="secondary" class="widget-area" role="complementary">
+            <?php dynamic_sidebar( 'sidebar-1' ); ?>
+    </div><!-- #secondary -->
+    <?php endif; ?>
+    
     <div id="sidebar_1" class="sidebar">
         <ul class="sidebar_list">
+            
             <li class="widget widget_text" id="text-4">
                 <h3>New Visitor?</h3>
                 <div class="textwidget">
                     <div class="start-here-sidebar">
-                        <a onclick="_gaq.push(['_trackEvent', 'StartHere-Banner-Sidebar', 'Visited Start Here Page from Sidebar', 'Widget-Sidebar-StartHere', , false]);" href="http://www.productivemuslim.com/start-here/">
-                            <img width="90" height="90" src="<?php echo get_image_uri('start-here.png'); ?>" alt="Start Here | Productive Muslim"> Visiting our site for the first time? Explore our A-Z guide to read, follow and watch.</a>
+                        <a onclick="_gaq.push(['_trackEvent', 'StartHere-Banner-Sidebar', 'Visited Start Here Page from Sidebar', 'Widget-Sidebar-StartHere', , false]);" href="/start-here/">
+                            <img width="90" height="90" src="<?php echo get_image_uri('start-here.png'); ?>" alt="Start Here - Productive Muslim"> Visiting our site for the first time? Explore our A-Z guide to read, follow and watch.</a>
                     </div>
                 </div>
             </li>
@@ -32,6 +47,11 @@
                             <button name="submit" type="submit" tabindex="502">DOWNLOAD Free eBook</button>
                         </p>
                     </form>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <a href="http://productivemuslim.com/reignite-your-self-motivation-and-drive-your-life-forward-with-higher-purpose-passion/?utm_source=ProM-Website&utm_medium=ProM-Website&utm_campaign=Website-Interlinking" title="Self-Motivation Online Class with Abu Productive"><img src="http://productivemuslim.com/wp-content/uploads/2013/05/Self-Motivation-Sidebar-300x250.jpg" alt="Self-Motivation Online Class with Abu Productive" /></a>
                 </div>
             </li>
         </ul>
