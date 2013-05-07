@@ -77,7 +77,7 @@ img[align="right"] { float: right; clear: right; }
 img[align="middle"] { display: block; margin-right: auto; margin-left: auto; float: none; clear: both; }
 
 /*---:[ image captioning ]:---*/
-.wp-caption { border-style: solid; border-color: #ddd; background-color: #eee; text-align: center; font-style: italic; }
+.wp-caption { text-align: center; font-style: italic; }
 	.wp-caption.alignleft { float: left; }
 	.wp-caption.alignright { float: right; }
 	.wp-caption.aligncenter { margin-right: auto; margin-left: auto; float: none; clear: both; }

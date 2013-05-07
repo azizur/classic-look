@@ -127,7 +127,6 @@ body { font-family: Georgia, "Times New Roman", Times, serif; }
 	.format_text img[align="left"] { margin-right: 1.5em; margin-bottom: 1.5em; }
 	.format_text img[align="right"] { margin-bottom: 1.5em; margin-left: 1.5em; }
 	.format_text img[align="middle"] { margin-bottom: 1.5em; }
-	.format_text img.frame, .format_text .wp-caption { padding: 0.688em; border-width: 0.063em; }
 	.format_text img.stack { margin-left: 1.5em; }
 	.format_text .wp-caption p { font-size: 0.875em; line-height: 1.429em; margin-bottom: 0; }
 	/*---:[ ad and miscellaneous "block" classes ]:---*/
