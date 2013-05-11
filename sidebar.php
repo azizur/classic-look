@@ -49,11 +49,6 @@
                     </form>
                 </div>
             </li>
-            <li>
-                <div>
-                    <a href="http://productivemuslim.com/reignite-your-self-motivation-and-drive-your-life-forward-with-higher-purpose-passion/?utm_source=ProM-Website&utm_medium=ProM-Website&utm_campaign=Website-Interlinking" title="Self-Motivation Online Class with Abu Productive"><img src="http://productivemuslim.com/wp-content/uploads/2013/05/Self-Motivation-Sidebar-300x250.jpg" alt="Self-Motivation Online Class with Abu Productive" /></a>
-                </div>
-            </li>
         </ul>
     </div>
 </div>
