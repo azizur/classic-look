@@ -1,5 +1,8 @@
 <div id="sidebars">
 			<div id="sidebar_1" class="sidebar">
+<?php
+if (!dynamic_sidebar()):
+?>
 				<ul class="sidebar_list">
 <li class="widget widget_text" id="text-4"><h3>New Visitor?</h3>			<div class="textwidget"><div class="start-here-sidebar">
     <a onclick="_gaq.push(['_trackEvent','StartHere-Banner-Sidebar','Visited Start Here Page from Sidebar','Widget-Sidebar-StartHere',,false]);" href="http://www.productivemuslim.com/start-here/">
@@ -29,5 +32,10 @@
 			</div>
 		</div>
 	</div>
+
+<?php
+endif;
+?>
+	
 </div>
 </div>
