@@ -280,7 +280,7 @@ function prom_widgets_init() {
 		'after_title' => '</h3>',
 	) );
 }
-//add_action( 'widgets_init', 'prom_widgets_init' );
+add_action( 'widgets_init', 'prom_widgets_init' );
 
 
 /**
@@ -442,3 +442,101 @@ function prom_social_share() {
     return sharing_display();
 }
 add_shortcode('share-on-social-media', 'prom_social_share');
+
+/**
+ * New visitor widget
+ *
+ * for content like these, it can be implemented with Text widget too,
+ * try it from admin panel on widget dashboard page  
+ */
+class Productivemuslim_NewVisitorWidget extends WP_Widget {
+
+	public function __construct() {
+		parent::__construct(
+	 		'Productivemuslim_NewVisitorWidget', // Base ID
+			'New Visitor Widget', // Name
+			array( 'description' => __( 'Put this to sidebar', 'text_domain' ), )
+		);	
+	}
+
+	public function widget( $args, $instance) {
+		$content = '
+		        <li class="widget widget_text" id="text-4">
+                <h3>New Visitor?</h3>
+                <div class="textwidget">
+                    <div class="start-here-sidebar">
+                        <a onclick="_gaq.push([\'_trackEvent\', \'StartHere-Banner-Sidebar\', \'Visited Start Here Page from Sidebar\', \'Widget-Sidebar-StartHere\', , false]);" href="/start-here/">
+                            <img width="90" height="90" src="'.get_image_uri('start-here.png').'" alt="Start Here - Productive Muslim"> Visiting our site for the first time? Explore our A-Z guide to read, follow and watch.</a>
+                    </div>
+                </div>
+                </li>		
+		';
+	    echo $content;
+	}
+ 	public function form( $instance ) {
+		// outputs the options form on admin
+	}
+
+	public function update( $new_instance, $old_instance ) {
+		// processes widget options to be saved
+	}	
+}
+// register widget
+add_action( 'widgets_init', function(){
+     register_widget( 'Productivemuslim_NewVisitorWidget' );
+});
+
+/**
+ * Free Ebook widget
+ */
+class Productivemuslim_FreeEbookWidget extends WP_Widget {
+
+	public function __construct() {
+		parent::__construct(
+	 		'Productivemuslim_FreeEbookWidget', // Base ID
+			'Free Ebook Widget', // Name
+			array( 'description' => __( 'Put this to sidebar', 'text_domain' ), )
+		);	
+	}
+
+	public function widget( $args, $instance) {
+		$content = '
+            <li class="widget widget_text" id="text-9">
+                <h3>FREE EBOOK!</h3>
+                <div class="textwidget">
+                    <p class="sidebar-skin-intro">Subscribe to our weekly newsletter and receive a <strong>free copy of our eBook</strong> "The Very Best of ProductiveMuslim"</p>
+                    <form method="post" class="af-form-wrapper" action="http://www.aweber.com/scripts/addlead.pl" id="ois_10_form">
+                        <input type="hidden" name="meta_web_form_id" value="1329104675" />
+                        <input type="hidden" name="meta_split_id" value="" />
+                        <input type="hidden" name="listname" value="prom-newsletter" />
+                        <input type="hidden" name="redirect" value="http://www.productivemuslim.com/check-your-email/" id="redirect_9fa3445f6660575bc1f60b50a42a83f0" />
+                        <input type="hidden" name="meta_redirect_onlist" value="http://www.productivemuslim.com/thanks-for-signing-up-for-email-updates/" />
+                        <input type="hidden" name="meta_adtracking" value="Widget-Sidebar" />
+                        <input type="hidden" name="meta_message" value="1001" />
+                        <input type="hidden" name="meta_required" value="email" />
+                        <input type="hidden" name="meta_tooltip" value="" />
+                        <p>
+                            <input id="awf_field-44506975" type="text" name="name" class="inputemail" placeholder="Full Name" value="" required>
+                            <input id="awf_field-44506976" type="email" name="email" class="inputemail" pattern="[^ @]*@[^ @]*" value="" placeholder="Your Email Address" required>
+                        </p>
+                        <p class="sidebar-skin-submit">
+                            <button name="submit" type="submit" tabindex="502">DOWNLOAD Free eBook</button>
+                        </p>
+                    </form>
+                </div>
+            </li>	
+		';
+	    echo $content;
+	}
+ 	public function form( $instance ) {
+		// outputs the options form on admin
+	}
+
+	public function update( $new_instance, $old_instance ) {
+		// processes widget options to be saved
+	}	
+}
+// register widget
+add_action( 'widgets_init', function(){
+     register_widget( 'Productivemuslim_FreeEbookWidget' );
+});
