@@ -402,3 +402,28 @@ div.sharedaddy .sharing-hidden .inner {
 .sticky.format-gallery .entry-meta .date {
 	display: none;
 }
+
+#prom-archives,
+#prom-archives ul,
+#prom-archives ul ul {
+    list-style: none;
+    margin: 0;
+}
+
+#prom-archives ul,
+#prom-archives ul ul {
+    margin-left: 10px;
+}
+#prom-archives h2,
+#prom-archives h3 {
+    color: #C66717;
+    background: none;
+    margin: 1.4em 0 0.6em;
+}
+#prom-archives > li {
+    margin-bottom: 20px; 
+}
+#prom-archives ul ul li {
+    border-bottom: 1px solid #efefef;
+    padding: 4px 10px;
+}
