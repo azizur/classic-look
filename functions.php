@@ -16,7 +16,7 @@ function prom_styles() {
         array('css' => 'ie.css', 'deps'=>array('prom-safe'), 'extra' => array('conditional', 'lte IE 7')),
         array('css' => 'custom.css'),
         array('css' => 'genericons.css'),
-        array('css' => 'safe.css', 'deps'=>array('prom-genericons')),
+        array('css' => 'safe.css', 'deps'=>array('prom-genericons','sharedaddy')),
     );
     
     // check if JetPack sharing is enabled if so make it a dependency
@@ -457,93 +457,90 @@ function prom_archives() {
     
     $arcgroups = array();
     
-    $query = "SELECT YEAR(post_date) AS `year`, MONTH(post_date) AS `month`, MONTHNAME(post_date) AS `monthname`, DAYOFMONTH(post_date) AS `dayofmonth`, count(ID) as posts, post_date, post_title, comment_count FROM $wpdb->posts $where GROUP BY YEAR(post_date), MONTH(post_date), DAYOFMONTH(post_date) ORDER BY $orderby";
+    $query = "SELECT YEAR(post_date) AS `year`, MONTH(post_date) AS `month`, MONTHNAME(post_date) AS `monthname`, DAYOFMONTH(post_date) AS `dayofmonth`, count(ID) as posts, ID, post_author, post_date, post_date_gmt, post_title, post_status, post_name, post_type, post_mime_type, comment_count FROM $wpdb->posts $where GROUP BY YEAR(post_date), MONTH(post_date), DAYOFMONTH(post_date) ORDER BY $orderby";
     
     $key = md5($query);
-    $cache = wp_cache_get( 'wp_get_archives' , 'general');
+    $cache = wp_cache_get( 'prom_get_archives' , 'prom_archives');
     
     if ( !isset( $cache[ $key ] ) ) {
         $arcresults = $wpdb->get_results($query);
-        $cache[ $key ] = $arcresults;
-        wp_cache_set( 'wp_get_archives', $cache, 'general' );
-    } else {
-        $arcresults = $cache[ $key ];
-    }
-    
-    if ( $arcresults ) {
-        foreach ( (array) $arcresults as $arcresult ) {
-            
-            if ( $arcresult->post_date != '0000-00-00 00:00:00' ) {
-                $url  = get_permalink( $arcresult );
-                if ( $arcresult->post_title ) {
-                    $text = strip_tags( apply_filters( 'the_title', $arcresult->post_title, $arcresult->ID ) );
-                } else {
-                    $text = $arcresult->ID;
-                }
-                
-                $before = $arcresult->dayofmonth.' / ';
-                $after = ($arcresult->comment_count>0)?' ('.$arcresult->comment_count.')':$after;
-                $arcgroups[$arcresult->year]['months'][$arcresult->month]['posts'][] = get_archives_link($url, $text, $format, $before, $after);
-                
-                
-                if(!isset($arcgroups[$arcresult->year]['url'])) {
-                    $arcgroups[$arcresult->year]['url'] = get_year_link($arcresult->year);
-                }
-                
-                if(!isset($arcgroups[$arcresult->year][$arcresult->month]['url'])) {
-                    $arcgroups[$arcresult->year]['months'][$arcresult->month]['url'] = get_month_link( $arcresult->year, $arcresult->month );
-                }
-                
-                if(!isset($arcgroups[$arcresult->year]['months'][$arcresult->month]['monthname'])) {
-                    $arcgroups[$arcresult->year]['months'][$arcresult->month]['monthname'] = $arcresult->monthname;
-                }
-                
-            }
-        }
         
-        $output_str = '<ul id="prom-archives">';
-        
-        foreach(array_keys($arcgroups) as $year) {
-            $output_str.= '<li>';
-            
-            $url = $arcgroups[$year]['url'];
-            $text = $year;
-            $format='';
-            $before='<h2>';
-            $after = '</h2>';
-            
-            $output_str.= get_archives_link($url, $text, $format, $before, $after);
-            
-            
-            $output_str.= '<ul>';
-            foreach(array_keys($arcgroups[$year]['months']) as $month) {
-                $output_str.= '<li>';
-                $url = $arcgroups[$year]['months'][$month]['url'];
-                $text = $arcgroups[$year]['months'][$month]['monthname'];
-                $format='';
-                $before='<h3>';
-                $after = ' ('.count($arcgroups[$year]['months'][$month]['posts']).')</h3>';
+        if ( $arcresults ) {
+            foreach ( (array) $arcresults as $arcresult ) {
 
-                $output_str.= get_archives_link($url, $text, $format, $before, $after);
-                
-                $output_str.= '<ul>';
-                $output_str.= implode('', $arcgroups[$year]['months'][$month]['posts']);
-                $output_str.= '</ul>';
-                
-                // end of month
-                $output_str.= '</li>';
+                if ( $arcresult->post_date != '0000-00-00 00:00:00' ) {
+
+                    if ( $arcresult->post_title ) {
+                        $text = strip_tags( apply_filters( 'the_title', $arcresult->post_title, $arcresult->ID ) );
+                    } else {
+                        $text = $arcresult->ID;
+                    }
+
+                    $url  = get_permalink( $arcresult );
+                    $before = $arcresult->dayofmonth.' / ';
+                    $after = ($arcresult->comment_count>0)?' ('.$arcresult->comment_count.')':$after;
+                    $arcgroups[$arcresult->year]['months'][$arcresult->month]['posts'][] = get_archives_link($url, $text, $format, $before, $after);
+
+                    if(!isset($arcgroups[$arcresult->year]['url'])) {
+                        $arcgroups[$arcresult->year]['url'] = get_year_link($arcresult->year);
+                    }
+
+                    if(!isset($arcgroups[$arcresult->year][$arcresult->month]['url'])) {
+                        $arcgroups[$arcresult->year]['months'][$arcresult->month]['url'] = get_month_link( $arcresult->year, $arcresult->month );
+                    }
+
+                    if(!isset($arcgroups[$arcresult->year]['months'][$arcresult->month]['monthname'])) {
+                        $arcgroups[$arcresult->year]['months'][$arcresult->month]['monthname'] = $arcresult->monthname;
+                    }
+
+                }
             }
-            $output_str.= '</ul>';
-            
-            // end of year
-            $output_str.= '</li>';
+
+            $output = '<ul id="prom-archives">';
+
+            foreach(array_keys($arcgroups) as $year) {
+                $output.= '<li>';
+
+                $url = $arcgroups[$year]['url'];
+                $text = $year;
+                $format='';
+                $before='<h2>';
+                $after = '</h2>';
+
+                $output.= get_archives_link($url, $text, $format, $before, $after);
+
+                $output.= '<ul>';
+                foreach(array_keys($arcgroups[$year]['months']) as $month) {
+                    $output.= '<li>';
+                    $url = $arcgroups[$year]['months'][$month]['url'];
+                    $text = $arcgroups[$year]['months'][$month]['monthname'];
+                    $format='';
+                    $before='<h3>';
+                    $after = ' ('.count($arcgroups[$year]['months'][$month]['posts']).')</h3>';
+
+                    $output.= get_archives_link($url, $text, $format, $before, $after);
+
+                    $output.= '<ul>';
+                    $output.= implode('', $arcgroups[$year]['months'][$month]['posts']);
+                    $output.= '</ul>';
+
+                    // end of month
+                    $output.= '</li>';
+                }
+                $output.= '</ul>';
+
+                // end of year
+                $output.= '</li>';
+            }
+            $output .= '</ul>';
         }
-        $output_str .= '</ul>';
         
-        return $output_str;
+        $cache[ $key ] = $output;
+        wp_cache_set( 'prom_get_archives', $cache, 'prom_archives' );
+    } else {
+        $output = $cache[ $key ];
     }
-    
-    //return $output;
+    return $output;
 }
 add_shortcode('promarchives', 'prom_archives');
 
