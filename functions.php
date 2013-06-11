@@ -61,6 +61,7 @@ function prom_scripts() {
         array('core.js', array('jquery')),
         array('abalytics.js', array()),
         array('multivariate-tests.js', array()),
+        array('crazyegg.js', array()),
     );
     
     foreach($scripts as $script) {
