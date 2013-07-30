@@ -78,5 +78,13 @@
                                                         <div id="header">
                                                             <? render_prom_primary_navigation_menu(); ?>
                                                         </div>
+                                                        
+                                                        <?php if ( is_active_sidebar( 'leaderboard-header' ) ) : ?>
+                                                        <div id="leaderboard-header" class="leaderboard sidebar widget-area" role="banner">
+                                                            <?php dynamic_sidebar( 'leaderboard-header' ); ?>
+                                                        </div>
+                                                        <?php endif; ?>
+
+                                                        
                                                         </div>
                                                         </div>

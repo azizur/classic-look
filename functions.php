@@ -251,6 +251,16 @@ add_action( 'after_setup_theme', 'prom_setup' );
  *
  */
 function prom_widgets_init() {
+        register_sidebar( array(
+		'name' => __( 'Leaderboard Header', 'productivemuslim' ),
+		'id' => 'leaderboard-header',
+		'description' => __( 'Appears on posts and pages below the Main Navigation', 'productivemuslim' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	) );
+
 	register_sidebar( array(
 		'name' => __( 'Main Sidebar', 'productivemuslim' ),
 		'id' => 'sidebar-1',
