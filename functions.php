@@ -16,13 +16,8 @@ function prom_styles() {
         array('css' => 'ie.css', 'deps'=>array('prom-safe'), 'extra' => array('conditional', 'lte IE 7')),
         array('css' => 'custom.css'),
         array('css' => 'genericons.css'),
-        array('css' => 'safe.css', 'deps'=>array('prom-genericons','sharedaddy')),
+        array('css' => 'safe.css', 'deps'=>array('prom-genericons')),
     );
-    
-    // check if JetPack sharing is enabled if so make it a dependency
-    if ( wp_style_is('sharedaddy') || wp_style_is('sharedaddy', 'registered') ) {
-        $styles[] = array('css' => 'safe.css', 'deps' => array('sharedaddy'));
-    }
     
     if(is_single()) {
         $styles[] = array('css' => 'comments.css');
@@ -149,7 +144,7 @@ function render_prom_footer_copyright_navigation_menu() {
         'menu_class'      => 'menu-inline',
         'menu_id'         => 'copyright-menu',
         'echo'            => true,
-        //'fallback_cb'     => 'wp_page_menu',
+        'fallback_cb'     => 'wp_page_menu',
         'before'          => '',
         'after'           => '',
         'link_before'     => '',
@@ -224,7 +219,7 @@ function prom_setup() {
     // This theme uses wp_nav_menu() in one location.
     register_nav_menu( 'primary', 'Navigation Menu' );
     register_nav_menu( 'top-menu', 'Top Menu' );
-    register_nav_menu( 'footer-menu', 'Footer Menu' );
+    register_nav_menu( 'copyright-menu', 'Footer Menu' );
 
     /*
      * This theme uses a custom image size for featured images, displayed on

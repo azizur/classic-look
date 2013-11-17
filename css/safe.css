@@ -263,7 +263,7 @@ nav.navigation .nav-links{
 }
 
 #nav-copyright-menu {
-    display: inline;
+    
 }
 
 #nav-copyright-menu ul {
@@ -276,8 +276,15 @@ nav.navigation .nav-links{
 #nav-copyright-menu li {
     border-right: 1px solid #ccc;
     display: inline;
-    padding: 0 4px;
+    padding: 0 6px;
     margin: 0;
+}
+#nav-copyright-menu li:last-child {
+    border-right: none;
+    padding-right: 0;
+}
+#nav-copyright-menu li ul {
+    display: none;
 }
 
 div.sharedaddy {

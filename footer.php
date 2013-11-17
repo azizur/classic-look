@@ -71,11 +71,9 @@
                     <a target="_top" href="http://feeds.feedburner.com/ProductiveMuslim" onClick="_gaq.push(['_trackEvent', 'RSSfeed-Button-Footer', 'Visited RSS Feed Page from Footer', 'Widget-Footer-StayInTouch', , false]);"><img alt="ProductiveMuslim RSS" src="<?php echo get_image_uri('rss.png'); ?>"></a>
                 </div>
                 <div id="footerEndCopyright">
-                    
-                    <? render_prom_footer_copyright_navigation_menu(); ?>
-                    
-                    <span>&copy; 2008&mdash;<?echo date('Y');?> ProductiveMuslim.com</span> 
+                    <?php render_prom_footer_copyright_navigation_menu(); ?>
                 </div>
+                <div>&copy; 2008&mdash;<?echo date('Y');?> ProductiveMuslim.com</div>
             </div><!-- #footerEnd -->
         </div><!-- #prefooterx -->
 
