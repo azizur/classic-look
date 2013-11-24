@@ -954,16 +954,6 @@ textarea {
 	background: linear-gradient(top,  #88502b 0%,#ec9939 0%,#c66717 100%,#c66717 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ec9939', endColorstr='#c66717',GradientType=0 ); /* IE6-9 */
 }
-#productivemuslim-advertise {
-	background:url(http://www.productivemuslim.com/wp-content/uploads/2012/04/Advertise-With-Us-160x160.jpg) left no-repeat;
-	border-radius:4px 4px 4px 4px;
-	overflow:hidden;
-	width:156px;
-	padding:0;
-	margin:0 auto;
-	height: 160px;
-	border:1px solid #DDDDDD;
-}
 .textwidget .morevideos {
 	width: auto;
 	height: 20px !important;

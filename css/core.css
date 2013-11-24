@@ -37,10 +37,7 @@ body { font-size: 10px; }
 
 /*---:[ core layout elements ]:---*/
 #header { border-style: double; border-color: #ddd; clear: both; }
-	#column_wrap { float: left; }
 	.post_box, .teasers_box { border-style: dotted; border-color: #bbb; clear: both; }
-		.teaser { float: left; }
-		.teaser_right { float: right; }
 	.top { border: none; }
 		#sidebars { border-color: #ddd; }
 #footer { border-style: double; border-color: #ddd; text-align: right; clear: both; }
@@ -322,4 +319,4 @@ dl#comment_list { border-top: 1px dotted #bbb; }
 			text-shadow: -1px -1px #562806;
 			width: 50%
 		}
-			#optin input[type="submit"]:hover { color: #ffdeb3 }
+#optin input[type="submit"]:hover { color: #ffdeb3 }
