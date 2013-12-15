@@ -1,49 +1,53 @@
 <?php
 
 global $prom_theme;
-    
-if(!is_a($prom_theme, 'WP_Theme')) {
-    $prom_theme = wp_get_theme();
+
+if ( ! isset( $content_width ) ) {
+	$content_width = 640;
+}
+
+if ( ! is_a( $prom_theme, 'WP_Theme' ) ) {
+	$prom_theme = wp_get_theme();
 }
 
 // add Productive Muslim Styles
 function prom_styles() {
-    global $prom_theme;
-    
-    $styles = array(
-        array('css' => 'core.css'),
-        array('css' => 'layout.css'),
-        array('css' => 'ie.css', 'deps'=>array('prom-safe'), 'extra' => array('conditional', 'lte IE 7')),
-        array('css' => 'custom.css'),
-        array('css' => 'genericons.css'),
-        array('css' => 'safe.css', 'deps'=>array('prom-genericons')),
-    );
-    
-    if(is_single()) {
-        $styles[] = array('css' => 'comments.css');
-    }
-    
-    foreach($styles as $style) {
-        $css = '';
-        $deps = $extra = array();
-        
-        extract($style, EXTR_OVERWRITE);
-        
-        $style_url = get_stylesheet_directory_uri() . '/css/' . $css;
-        
-        $handle = 'prom-' . str_replace('.css', '', $css);
-        $src = esc_url_raw( $style_url );
-        $ver = $prom_theme->Version;
-        $media = 'all';
-        
-        wp_enqueue_style($handle, $src, $deps, $ver, $media );
-        
-        if(count($extra)) {
-            global $wp_styles;
-            list($key, $value) = $extra;
-            $wp_styles->add_data( $handle, $key, $value);
-        }
-    }
+	global $prom_theme;
+
+	$styles = array(
+		array( 'css' => 'core.css' ),
+		array( 'css' => 'layout.css' ),
+		array( 'css' => 'ie.css', 'deps' => array( 'prom-safe' ), 'extra' => array( 'conditional', 'lte IE 7' ) ),
+		array( 'css' => 'custom.css' ),
+		array( 'css' => 'genericons.css' ),
+		array( 'css' => 'safe.css', 'deps' => array( 'prom-genericons' ) ),
+	);
+
+	if ( is_single() ) {
+		$styles[] = array( 'css' => 'comments.css' );
+	}
+
+	foreach( $styles as $style ) {
+		$css = '';
+		$deps = $extra = array();
+
+		extract( $style, EXTR_OVERWRITE );
+
+		$style_url = get_stylesheet_directory_uri() . '/css/' . $css;
+
+		$handle = 'prom-' . str_replace( '.css', '', $css );
+		$src = esc_url_raw( $style_url );
+		$ver = $prom_theme->Version;
+		$media = 'all';
+
+		wp_enqueue_style( $handle, $src, $deps, $ver, $media );
+
+		if ( count( $extra ) ) {
+			global $wp_styles;
+			list( $key, $value ) = $extra;
+			$wp_styles->add_data( $handle, $key, $value );
+		}
+	}
 }
 add_action( 'wp_enqueue_scripts', 'prom_styles' );
 
@@ -130,7 +134,7 @@ function render_prom_primary_navigation_menu() {
         'depth'           => 0,
         //'walker'          => ''
     );
-    wp_nav_menu( $config );
+    wp_nav_menu($config);
 }
 
 

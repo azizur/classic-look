@@ -434,3 +434,38 @@ div.sharedaddy .sharing-hidden .inner {
     border-bottom: 1px solid #efefef;
     padding: 4px 10px;
 }
+
+.footer-content {
+    clear: both;
+    float: none;
+    line-height: 18px;
+    font-size: 12px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.footer-content > div {
+    width: 25%;
+    float: left;
+}
+
+.footer-content > div > h3 {
+    font-size: 20px;
+    -webkit-border-radius:0px;
+    -moz-border-radius:0px;
+    border-radius:0px;
+}
+
+.footer-content p,
+.footer-content ul {
+    padding: 8px 16px;
+    line-height: 18px;
+}
+
+.footer-content ul li {
+    margin-bottom: 6px;
+}
+
+.footer-content .inputemail {
+    width: 95%;
+}
