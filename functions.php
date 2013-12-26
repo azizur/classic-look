@@ -374,12 +374,6 @@ function prom_paging_nav() {
 }
 
 
-//function posts_link_attributes() {
-//    return 'class="more-link"';
-//}
-//add_filter('next_posts_link_attributes', 'posts_link_attributes');
-//add_filter('previous_posts_link_attributes', 'posts_link_attributes');
-
 /**
  * Displays navigation to next/previous post when applicable.
  * @return void
@@ -540,6 +534,7 @@ function prom_archives() {
                     $text = $arcgroups[$year]['months'][$month]['monthname'];
                     $format='';
                     $before='<h3>';
+
                     $after = ' ('.count($arcgroups[$year]['months'][$month]['posts']).')</h3>';
 
                     $output.= get_archives_link($url, $text, $format, $before, $after);
