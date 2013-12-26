@@ -467,7 +467,7 @@ function prom_archives() {
     
     $arcgroups = array();
     
-    $query = "SELECT YEAR(post_date) AS `year`, MONTH(post_date) AS `month`, MONTHNAME(post_date) AS `monthname`, DAYOFMONTH(post_date) AS `dayofmonth`, count(ID) as posts, ID, post_author, post_date, post_date_gmt, post_title, post_status, post_name, post_type, post_mime_type, comment_count FROM $wpdb->posts $where GROUP BY YEAR(post_date), MONTH(post_date), DAYOFMONTH(post_date) ORDER BY $orderby";
+    $query = "SELECT YEAR(post_date) AS `year`, MONTH(post_date) AS `month`, MONTHNAME(post_date) AS `monthname`, DAYOFMONTH(post_date) AS `dayofmonth`, ID, post_author, post_date, post_date_gmt, post_title, post_status, post_name, post_type, post_mime_type, comment_count FROM $wpdb->posts $where GROUP BY post_title ORDER BY $orderby";
     
     $key = md5($query);
     $cache = wp_cache_get( 'prom_get_archives' , 'prom_archives');
@@ -476,6 +476,8 @@ function prom_archives() {
         $arcresults = $wpdb->get_results($query);
         
         if ( $arcresults ) {
+            $date_format = get_option('date_format');
+
             foreach ( (array) $arcresults as $arcresult ) {
 
                 if ( $arcresult->post_date != '0000-00-00 00:00:00' ) {
@@ -487,8 +489,20 @@ function prom_archives() {
                     }
 
                     $url  = get_permalink( $arcresult );
-                    $before = $arcresult->dayofmonth.' / ';
+                    $before = sprintf(
+                        '<span title="%s">%s</span> / ',
+                        date($date_format, strtotime($arcresult->post_date) ), $arcresult->dayofmonth
+                    );
+
+                    $comments_num = sprintf(
+                        _nx( 'One Comment', '%1$s Comments', $arcresult->comment_count, 'comments title', 'twentythirteen' ),
+                        number_format_i18n( $arcresult->comment_count )
+                    );
+
                     $after = ($arcresult->comment_count>0)?' ('.$arcresult->comment_count.')':$after;
+                    $after = ($arcresult->comment_count>0)?' ('.$comments_num.')':$after;
+
+
                     $arcgroups[$arcresult->year]['months'][$arcresult->month]['posts'][] = get_archives_link($url, $text, $format, $before, $after);
 
                     if(!isset($arcgroups[$arcresult->year]['url'])) {
