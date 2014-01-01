@@ -54,6 +54,9 @@ if ( post_password_required() )
 
 	<?php endif; // have_comments() ?>
 
-	<?php comment_form( array( 'format' => 'html5' ) ); ?>
+	<?php
+    if ('open' == get_option('default_comment_status')) {
+        comment_form( array( 'format' => 'html5' ) );
+    } ?>
 
 </div><!-- #comments -->
